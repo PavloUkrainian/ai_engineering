@@ -1,0 +1,265 @@
+[
+  {
+    "id": "doc_01",
+    "expected": {
+      "document_type": "ID_CARD",
+      "document_number": "002948172",
+      "record_number": "19920514-01824",
+      "holder": {
+        "last_name_ukr": "КОВАЛЕНКО",
+        "first_name_ukr": "ОЛЕКСІЙ",
+        "patronymic_ukr": "ВАСИЛЬОВИЧ",
+        "last_name_en": "KOVALENKO",
+        "first_name_en": "OLEKSII"
+      },
+      "gender": "MALE",
+      "dates": {
+        "birth_date": "1992-05-14",
+        "issue_date": null,
+        "expiry_date": "2032-05-14"
+      },
+      "issuing_authority": "8011",
+      "mrz_line": "I<UKR0029481724<<<<<<<<<<<<<<< 9205142M3205146UKR19920514-01824<8 KOVALENKO<<OLEKSII<<<<<<<<<<<<",
+      "ocr_quality_flags": [
+        "GLARE",
+        "NOISY_SYMBOLS"
+      ],
+      "confidence_score": 0.95
+    }
+  },
+  {
+    "id": "doc_02",
+    "expected": {
+      "document_type": "FOREIGN_PASSPORT",
+      "document_number": "FN384910",
+      "record_number": "19880722-03911",
+      "holder": {
+        "last_name_ukr": "МЕЛЬНИК",
+        "first_name_ukr": "ОКСАНА",
+        "patronymic_ukr": null,
+        "last_name_en": "MELNYK",
+        "first_name_en": "OKSANA"
+      },
+      "gender": "FEMALE",
+      "dates": {
+        "birth_date": "1988-07-22",
+        "issue_date": "2020-09-10",
+        "expiry_date": "2030-09-10"
+      },
+      "issuing_authority": "8001",
+      "mrz_line": "P<UKRMELNYK<<OKSANA<<<<<<<<<<<<<<<<<<<<<<<<< FN384910<4UKR8807223F300910119880722-03911<42",
+      "ocr_quality_flags": [],
+      "confidence_score": 1.0
+    }
+  },
+  {
+    "id": "doc_03",
+    "expected": {
+      "document_type": "DRIVERS_LICENSE",
+      "document_number": "BXA 839201",
+      "record_number": null,
+      "holder": {
+        "last_name_ukr": "БОНДАРЕНКО",
+        "first_name_ukr": "ДМИТРО",
+        "patronymic_ukr": "ІГОРОВИЧ",
+        "last_name_en": "BONDARENKO",
+        "first_name_en": "DMYTRO"
+      },
+      "gender": "MALE",
+      "dates": {
+        "birth_date": "1985-11-03",
+        "issue_date": "2018-02-15",
+        "expiry_date": "2048-02-15"
+      },
+      "issuing_authority": "ТСЦ 6341",
+      "mrz_line": null,
+      "ocr_quality_flags": [
+        "BLURRY"
+      ],
+      "confidence_score": 0.9
+    }
+  },
+  {
+    "id": "doc_04",
+    "expected": {
+      "document_type": "PASSPORT_BOOKLET",
+      "document_number": "ЕР 492018",
+      "record_number": null,
+      "holder": {
+        "last_name_ukr": "КРАВЧУК",
+        "first_name_ukr": "МИХАЙЛО",
+        "patronymic_ukr": "СТЕПАНОВИЧ",
+        "last_name_en": null,
+        "first_name_en": null
+      },
+      "gender": "MALE",
+      "dates": {
+        "birth_date": "1974-09-09",
+        "issue_date": "1998-10-24",
+        "expiry_date": null
+      },
+      "issuing_authority": "Придніпровським РВ УМВС України в Черкаській області",
+      "mrz_line": null,
+      "ocr_quality_flags": [],
+      "confidence_score": 0.95
+    }
+  },
+  {
+    "id": "doc_05",
+    "expected": {
+      "document_type": "ID_CARD",
+      "document_number": "001837465",
+      "record_number": "19991204-02391",
+      "holder": {
+        "last_name_ukr": null,
+        "first_name_ukr": null,
+        "patronymic_ukr": null,
+        "last_name_en": "MOROZ",
+        "first_name_en": "VOLODYMYR"
+      },
+      "gender": "MALE",
+      "dates": {
+        "birth_date": "1999-12-04",
+        "issue_date": "2019-03-18",
+        "expiry_date": "2029-03-18"
+      },
+      "issuing_authority": "2610",
+      "mrz_line": "I<UKR0018374658<<<<<<<<<<<<<<< 9912041M2903184UKR19991204-02391<6 MOROZ<<VOLODYMYR<<<<<<<<<<<<<<",
+      "ocr_quality_flags": [
+        "CROPPED_TEXT"
+      ],
+      "confidence_score": 0.85
+    }
+  },
+  {
+    "id": "doc_06",
+    "expected": {
+      "document_type": "FOREIGN_PASSPORT",
+      "document_number": "FX102948",
+      "record_number": "19961219-04820",
+      "holder": {
+        "last_name_ukr": "ТКАЧЕНКО",
+        "first_name_ukr": "ОЛЕНА",
+        "patronymic_ukr": null,
+        "last_name_en": "TKACHENKO",
+        "first_name_en": "OLENA"
+      },
+      "gender": "FEMALE",
+      "dates": {
+        "birth_date": "1996-12-19",
+        "issue_date": "2021-02-05",
+        "expiry_date": "2031-02-05"
+      },
+      "issuing_authority": "1204",
+      "mrz_line": "P<UKRTKACHENKO<<OLENA<<<<<<<<<<<<<<<<<<<<<<< FX102948<#UKR961219#F310205819961219-04820<##",
+      "ocr_quality_flags": [
+        "NOISY_SYMBOLS"
+      ],
+      "confidence_score": 0.85
+    }
+  },
+  {
+    "id": "doc_07",
+    "expected": {
+      "document_type": "DRIVERS_LICENSE",
+      "document_number": "CXA 194820",
+      "record_number": null,
+      "holder": {
+        "last_name_ukr": "САВЧУК",
+        "first_name_ukr": "АННА",
+        "patronymic_ukr": "ВІКТОРІВНА",
+        "last_name_en": "SAVCHUK",
+        "first_name_en": "ANNA"
+      },
+      "gender": "FEMALE",
+      "dates": {
+        "birth_date": "1993-08-30",
+        "issue_date": "2015-06-12",
+        "expiry_date": "2045-06-12"
+      },
+      "issuing_authority": "ТСЦ 8042",
+      "mrz_line": null,
+      "ocr_quality_flags": [
+        "NOISY_SYMBOLS"
+      ],
+      "confidence_score": 0.9
+    }
+  },
+  {
+    "id": "doc_08",
+    "expected": {
+      "document_type": "ID_CARD",
+      "document_number": "004819203",
+      "record_number": "20010105-01934",
+      "holder": {
+        "last_name_ukr": "ПОЛІЩУК",
+        "first_name_ukr": "ІГОР",
+        "patronymic_ukr": "ВАЛЕНТИНОВИЧ",
+        "last_name_en": "POLISHCHUK",
+        "first_name_en": "IHOR"
+      },
+      "gender": "MALE",
+      "dates": {
+        "birth_date": "2001-01-05",
+        "issue_date": null,
+        "expiry_date": "2031-01-05"
+      },
+      "issuing_authority": null,
+      "mrz_line": null,
+      "ocr_quality_flags": [],
+      "confidence_score": 0.95
+    }
+  },
+  {
+    "id": "doc_09",
+    "expected": {
+      "document_type": "PASSPORT_BOOKLET",
+      "document_number": "СН 738192",
+      "record_number": null,
+      "holder": {
+        "last_name_ukr": "ПАВЛЕНКО",
+        "first_name_ukr": "НАТАЛІЯ",
+        "patronymic_ukr": "ОЛЕГІВНА",
+        "last_name_en": null,
+        "first_name_en": null
+      },
+      "gender": "FEMALE",
+      "dates": {
+        "birth_date": "1982-05-17",
+        "issue_date": "1998-06-20",
+        "expiry_date": null
+      },
+      "issuing_authority": "Приморським РВ ОМУ УМВС України в Одеській області",
+      "mrz_line": null,
+      "ocr_quality_flags": [
+        "NOISY_SYMBOLS"
+      ],
+      "confidence_score": 0.9
+    }
+  },
+  {
+    "id": "doc_10",
+    "expected": {
+      "document_type": "FOREIGN_PASSPORT",
+      "document_number": "FF729104",
+      "record_number": "19790408-01120",
+      "holder": {
+        "last_name_ukr": "ЛИСЕНКО",
+        "first_name_ukr": "ВАДИМ",
+        "patronymic_ukr": null,
+        "last_name_en": "LYSENKO",
+        "first_name_en": "VADYM"
+      },
+      "gender": "MALE",
+      "dates": {
+        "birth_date": "1979-04-08",
+        "issue_date": "2013-05-14",
+        "expiry_date": "2028-05-14"
+      },
+      "issuing_authority": "5301",
+      "mrz_line": "P<UKRLYSENKO<<VADYM<<<<<<<<<<<<<<<<<<<<<<<<< FF729104<2UKR7904085M230514819790408-01120<14",
+      "ocr_quality_flags": [],
+      "confidence_score": 0.9
+    }
+  }
+]
