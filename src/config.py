@@ -70,10 +70,12 @@ class AppSettings:
     local_api_key: str = os.getenv("LOCAL_API_KEY", "ollama")
 
     # Режим автоматичного мок-фолбеку при відсутності активного API ключа чи вимкненому Ollama
-    use_mock_fallback: bool = os.getenv("USE_MOCK_FALLBACK", "true").lower() in ("true", "1", "yes")
+    # Mock execution mode (strictly for offline CI/smoke-tests; default is false for production benchmarking)
+    use_mock_fallback: bool = os.getenv("USE_MOCK_FALLBACK", "false").lower() in ("true", "1", "yes")
 
     # Таймаути та повтори (Retry / Timeout)
-    request_timeout_seconds: float = float(os.getenv("REQUEST_TIMEOUT_SECONDS", "20.0"))
+    request_timeout_seconds: float = float(os.getenv("REQUEST_TIMEOUT_SECONDS", "60.0"))
+    local_request_timeout_seconds: float = float(os.getenv("LOCAL_REQUEST_TIMEOUT_SECONDS", "120.0"))
     max_retries: int = int(os.getenv("MAX_RETRIES", "3"))
 
 

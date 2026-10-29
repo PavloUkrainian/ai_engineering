@@ -145,7 +145,7 @@ class LocalClient(BaseLLMClient):
         self.client = OpenAI(
             api_key=self.api_key,
             base_url=self.base_url,
-            timeout=settings.request_timeout_seconds
+            timeout=settings.local_request_timeout_seconds
         )
         self._mock_client = MockFallbackClient(model_name=self.model_name, client_type="local")
 
@@ -153,8 +153,9 @@ class LocalClient(BaseLLMClient):
         try:
             return self._call_with_retry(system_prompt, user_text, sampling)
         except Exception as e:
-            logger.info(f"Локальний сервер Ollama недоступний ({e}).")
+            logger.warning(f"Локальний сервер Ollama ({self.model_name}) повернув помилку: {e}.")
             if settings.use_mock_fallback:
+                logger.info("Використовуємо fallback-генератор для завершення пайплайну.")
                 return self._mock_client.generate(system_prompt, user_text, sampling)
             raise
 

@@ -12,23 +12,23 @@
     "total_documents": 30,
     "golden_evaluated": 10,
     "valid_rate_percent": 100.0,
-    "overall_field_accuracy_percent": 95.6,
+    "overall_field_accuracy_percent": 96.7,
     "per_field_accuracy_percent": {
       "document_type": 100.0,
-      "document_number": 90.0,
+      "document_number": 100.0,
       "record_number": 100.0,
-      "holder_last_name": 100.0,
-      "holder_first_name": 100.0,
-      "gender": 80.0,
+      "holder_last_name": 90.0,
+      "holder_first_name": 90.0,
+      "gender": 100.0,
       "birth_date": 100.0,
-      "expiry_date": 100.0,
-      "issuing_authority": 90.0
+      "expiry_date": 90.0,
+      "issuing_authority": 100.0
     },
-    "latency_p50_ms": 460.0,
-    "latency_p95_ms": 524.9,
-    "latency_mean_ms": 450.6,
-    "total_cost_usd": 0.007176,
-    "cost_per_1000_docs_usd": 0.2392
+    "latency_p50_ms": 3063.0,
+    "latency_p95_ms": 4010.1,
+    "latency_mean_ms": 3408.0,
+    "total_cost_usd": 0.009843,
+    "cost_per_1000_docs_usd": 0.3281
   },
   "records": [
     {
@@ -41,11 +41,11 @@
         "top_p": 1.0,
         "max_tokens": 1500
       },
-      "latency_ms": 382.0,
-      "input_tokens": 1145,
-      "output_tokens": 161,
-      "cost_usd": 0.0002683,
-      "is_mock": true,
+      "latency_ms": 11097.41,
+      "input_tokens": 1530,
+      "output_tokens": 211,
+      "cost_usd": 0.0003561,
+      "is_mock": false,
       "validation": {
         "valid": true,
         "status": "success",
@@ -71,11 +71,11 @@
           "expiry_date": "2032-05-14"
         },
         "issuing_authority": "8011",
-        "mrz_line": "I<UKR0029481724<<<<<<<<<<<<<<< <<OLEKSII<<<<<<<<<<<<",
+        "mrz_line": "I<UKR0029481724<<<<<<<<<<<<<<<",
         "ocr_quality_flags": [
           "GLARE"
         ],
-        "confidence_score": 0.98
+        "confidence_score": 1.0
       }
     },
     {
@@ -88,11 +88,11 @@
         "top_p": 1.0,
         "max_tokens": 1500
       },
-      "latency_ms": 395.0,
-      "input_tokens": 1150,
-      "output_tokens": 158,
-      "cost_usd": 0.0002673,
-      "is_mock": true,
+      "latency_ms": 3354.12,
+      "input_tokens": 1515,
+      "output_tokens": 216,
+      "cost_usd": 0.0003568,
+      "is_mock": false,
       "validation": {
         "valid": true,
         "status": "success",
@@ -117,10 +117,10 @@
           "issue_date": "2020-09-10",
           "expiry_date": "2030-09-10"
         },
-        "issuing_authority": "/ОРГАН",
+        "issuing_authority": "8001",
         "mrz_line": "P<UKRMELNYK<<OKSANA<<<<<<<<<<<<<<<<<<<<<<<<<",
         "ocr_quality_flags": [],
-        "confidence_score": 0.98
+        "confidence_score": 1.0
       }
     },
     {
@@ -133,21 +133,21 @@
         "top_p": 1.0,
         "max_tokens": 1500
       },
-      "latency_ms": 396.0,
-      "input_tokens": 1056,
-      "output_tokens": 147,
-      "cost_usd": 0.0002466,
-      "is_mock": true,
+      "latency_ms": 3945.97,
+      "input_tokens": 1422,
+      "output_tokens": 203,
+      "cost_usd": 0.0003351,
+      "is_mock": false,
       "validation": {
         "valid": true,
-        "status": "success",
-        "repaired": false,
-        "repair_attempts": 0,
+        "status": "repaired",
+        "repaired": true,
+        "repair_attempts": 1,
         "error_message": null
       },
       "extracted": {
         "document_type": "DRIVERS_LICENSE",
-        "document_number": "BXA 839201",
+        "document_number": "BXA839201",
         "record_number": null,
         "holder": {
           "last_name_ukr": "БОНДАРЕНКО",
@@ -156,18 +156,18 @@
           "last_name_en": "BONDARENKO",
           "first_name_en": "DMYTRO"
         },
-        "gender": "UNKNOWN",
+        "gender": "MALE",
         "dates": {
           "birth_date": "1985-11-03",
           "issue_date": "2018-02-15",
           "expiry_date": "2048-02-15"
         },
-        "issuing_authority": "6341",
+        "issuing_authority": "ТСЦ 6341",
         "mrz_line": null,
         "ocr_quality_flags": [
           "BLURRY"
         ],
-        "confidence_score": 0.98
+        "confidence_score": 1.0
       }
     },
     {
@@ -180,11 +180,11 @@
         "top_p": 1.0,
         "max_tokens": 1500
       },
-      "latency_ms": 476.0,
-      "input_tokens": 1081,
-      "output_tokens": 155,
-      "cost_usd": 0.0002551,
-      "is_mock": true,
+      "latency_ms": 3016.54,
+      "input_tokens": 1433,
+      "output_tokens": 212,
+      "cost_usd": 0.0003421,
+      "is_mock": false,
       "validation": {
         "valid": true,
         "status": "success",
@@ -194,14 +194,14 @@
       },
       "extracted": {
         "document_type": "PASSPORT_BOOKLET",
-        "document_number": "ЕР 492018",
+        "document_number": "ЕР492018",
         "record_number": null,
         "holder": {
           "last_name_ukr": "КРАВЧУК",
           "first_name_ukr": "МИХАЙЛО",
           "patronymic_ukr": "СТЕПАНОВИЧ",
-          "last_name_en": null,
-          "first_name_en": null
+          "last_name_en": "KRAVCHUK",
+          "first_name_en": "MYKHAILO"
         },
         "gender": "MALE",
         "dates": {
@@ -209,10 +209,10 @@
           "issue_date": "1998-10-24",
           "expiry_date": null
         },
-        "issuing_authority": "ПАСПОРТ: ПРИДНІПРОВСЬКИМ РВ УМВС УКРАЇНИ В ЧЕРКАСЬКІЙ ОБЛАСТІ",
+        "issuing_authority": "Придніпровським РВ УМВС України в Черкаській області",
         "mrz_line": null,
         "ocr_quality_flags": [],
-        "confidence_score": 0.98
+        "confidence_score": 1.0
       }
     },
     {
@@ -225,11 +225,11 @@
         "top_p": 1.0,
         "max_tokens": 1500
       },
-      "latency_ms": 470.0,
-      "input_tokens": 1032,
-      "output_tokens": 159,
-      "cost_usd": 0.0002502,
-      "is_mock": true,
+      "latency_ms": 2956.81,
+      "input_tokens": 1383,
+      "output_tokens": 207,
+      "cost_usd": 0.0003316,
+      "is_mock": false,
       "validation": {
         "valid": true,
         "status": "success",
@@ -239,27 +239,27 @@
       },
       "extracted": {
         "document_type": "ID_CARD",
-        "document_number": null,
+        "document_number": "001837465",
         "record_number": "19991204-02391",
         "holder": {
-          "last_name_ukr": null,
-          "first_name_ukr": null,
+          "last_name_ukr": "МОРОЗ",
+          "first_name_ukr": "ВОЛОДИМИР",
           "patronymic_ukr": null,
           "last_name_en": "MOROZ",
           "first_name_en": "VOLODYMYR"
         },
-        "gender": "UNKNOWN",
+        "gender": "MALE",
         "dates": {
           "birth_date": "1999-12-04",
           "issue_date": "2019-03-18",
-          "expiry_date": "2029-03-18"
+          "expiry_date": null
         },
         "issuing_authority": "2610",
-        "mrz_line": "I<UKR0018374658<<<<<<<<<<<<<<< <<VOLODYMYR<<<<<<<<<<<<<<",
+        "mrz_line": "I<UKR0018374658<<<<<<<<<<<<<<<",
         "ocr_quality_flags": [
           "CROPPED_TEXT"
         ],
-        "confidence_score": 0.98
+        "confidence_score": 1.0
       }
     },
     {
@@ -272,11 +272,11 @@
         "top_p": 1.0,
         "max_tokens": 1500
       },
-      "latency_ms": 390.0,
-      "input_tokens": 1101,
-      "output_tokens": 162,
-      "cost_usd": 0.0002624,
-      "is_mock": true,
+      "latency_ms": 3659.89,
+      "input_tokens": 1452,
+      "output_tokens": 217,
+      "cost_usd": 0.000348,
+      "is_mock": false,
       "validation": {
         "valid": true,
         "status": "success",
@@ -306,7 +306,7 @@
         "ocr_quality_flags": [
           "NOISY_SYMBOLS"
         ],
-        "confidence_score": 0.98
+        "confidence_score": 1.0
       }
     },
     {
@@ -319,11 +319,11 @@
         "top_p": 1.0,
         "max_tokens": 1500
       },
-      "latency_ms": 491.0,
-      "input_tokens": 1039,
-      "output_tokens": 146,
-      "cost_usd": 0.0002434,
-      "is_mock": true,
+      "latency_ms": 3649.08,
+      "input_tokens": 1412,
+      "output_tokens": 207,
+      "cost_usd": 0.000336,
+      "is_mock": false,
       "validation": {
         "valid": true,
         "status": "success",
@@ -333,7 +333,7 @@
       },
       "extracted": {
         "document_type": "DRIVERS_LICENSE",
-        "document_number": "CXA 194820",
+        "document_number": "CXA194820",
         "record_number": null,
         "holder": {
           "last_name_ukr": "САВЧУК",
@@ -348,12 +348,12 @@
           "issue_date": "2015-06-12",
           "expiry_date": "2045-06-12"
         },
-        "issuing_authority": "8042",
+        "issuing_authority": "ТСЦ 8042",
         "mrz_line": null,
         "ocr_quality_flags": [
           "NOISY_SYMBOLS"
         ],
-        "confidence_score": 0.98
+        "confidence_score": 1.0
       }
     },
     {
@@ -366,11 +366,11 @@
         "top_p": 1.0,
         "max_tokens": 1500
       },
-      "latency_ms": 490.0,
-      "input_tokens": 1085,
-      "output_tokens": 141,
-      "cost_usd": 0.0002474,
-      "is_mock": true,
+      "latency_ms": 3264.16,
+      "input_tokens": 1435,
+      "output_tokens": 194,
+      "cost_usd": 0.0003317,
+      "is_mock": false,
       "validation": {
         "valid": true,
         "status": "success",
@@ -398,7 +398,7 @@
         "issuing_authority": null,
         "mrz_line": null,
         "ocr_quality_flags": [],
-        "confidence_score": 0.98
+        "confidence_score": 1.0
       }
     },
     {
@@ -411,11 +411,11 @@
         "top_p": 1.0,
         "max_tokens": 1500
       },
-      "latency_ms": 450.0,
-      "input_tokens": 1073,
-      "output_tokens": 157,
-      "cost_usd": 0.0002551,
-      "is_mock": true,
+      "latency_ms": 4062.53,
+      "input_tokens": 1436,
+      "output_tokens": 214,
+      "cost_usd": 0.0003438,
+      "is_mock": false,
       "validation": {
         "valid": true,
         "status": "success",
@@ -425,14 +425,14 @@
       },
       "extracted": {
         "document_type": "PASSPORT_BOOKLET",
-        "document_number": "СН 738192",
+        "document_number": "СН738192",
         "record_number": null,
         "holder": {
           "last_name_ukr": "ПАВЛЕНКО",
           "first_name_ukr": "НАТАЛІЯ",
           "patronymic_ukr": "ОЛЕГІВНА",
-          "last_name_en": null,
-          "first_name_en": null
+          "last_name_en": "PAVLENKO",
+          "first_name_en": "NATALIYA"
         },
         "gender": "FEMALE",
         "dates": {
@@ -440,12 +440,10 @@
           "issue_date": "1998-06-20",
           "expiry_date": null
         },
-        "issuing_authority": "ПРИМОРСЬКИМ РВ ОМУ УМВС УКРАЇНИ В ОДЕСЬКІЙ ОБЛАСТІ",
+        "issuing_authority": "Приморським РВ ОМУ УМВС України в Одеській області",
         "mrz_line": null,
-        "ocr_quality_flags": [
-          "NOISY_SYMBOLS"
-        ],
-        "confidence_score": 0.98
+        "ocr_quality_flags": [],
+        "confidence_score": 1.0
       }
     },
     {
@@ -458,11 +456,11 @@
         "top_p": 1.0,
         "max_tokens": 1500
       },
-      "latency_ms": 475.0,
-      "input_tokens": 1128,
-      "output_tokens": 170,
-      "cost_usd": 0.0002712,
-      "is_mock": true,
+      "latency_ms": 3649.42,
+      "input_tokens": 1508,
+      "output_tokens": 214,
+      "cost_usd": 0.0003546,
+      "is_mock": false,
       "validation": {
         "valid": true,
         "status": "success",
@@ -487,12 +485,10 @@
           "issue_date": "2013-05-14",
           "expiry_date": "2028-05-14"
         },
-        "issuing_authority": "5301  PERSONAL NO: 19790408-01120",
+        "issuing_authority": "5301",
         "mrz_line": "P<UKRLYSENKO<<VADYM<<<<<<<<<<<<<<<<<<<<<<<<<",
-        "ocr_quality_flags": [
-          "NOISY_SYMBOLS"
-        ],
-        "confidence_score": 0.98
+        "ocr_quality_flags": [],
+        "confidence_score": 1.0
       }
     },
     {
@@ -505,11 +501,11 @@
         "top_p": 1.0,
         "max_tokens": 1500
       },
-      "latency_ms": 422.0,
-      "input_tokens": 1017,
-      "output_tokens": 149,
-      "cost_usd": 0.0002419,
-      "is_mock": true,
+      "latency_ms": 2895.44,
+      "input_tokens": 1335,
+      "output_tokens": 201,
+      "cost_usd": 0.0003209,
+      "is_mock": false,
       "validation": {
         "valid": true,
         "status": "success",
@@ -522,22 +518,22 @@
         "document_number": "003819284",
         "record_number": "19951120-09381",
         "holder": {
-          "last_name_ukr": null,
-          "first_name_ukr": null,
+          "last_name_ukr": "РОМАНЕНКО",
+          "first_name_ukr": "ЮЛІЯ",
           "patronymic_ukr": null,
-          "last_name_en": null,
-          "first_name_en": null
+          "last_name_en": "ROMANENKO",
+          "first_name_en": "YULIIA"
         },
-        "gender": "UNKNOWN",
+        "gender": "FEMALE",
         "dates": {
-          "birth_date": null,
+          "birth_date": "1995-11-20",
           "issue_date": null,
-          "expiry_date": null
+          "expiry_date": "2030-11-20"
         },
-        "issuing_authority": "8013. EXPIRY: 2030-11-20. I<UKR0038192842",
+        "issuing_authority": "8013",
         "mrz_line": "I<UKR0038192842<<<<<<<<<<<<<<<",
         "ocr_quality_flags": [],
-        "confidence_score": 0.98
+        "confidence_score": 1.0
       }
     },
     {
@@ -550,11 +546,11 @@
         "top_p": 1.0,
         "max_tokens": 1500
       },
-      "latency_ms": 497.0,
-      "input_tokens": 994,
-      "output_tokens": 135,
-      "cost_usd": 0.0002301,
-      "is_mock": true,
+      "latency_ms": 3279.34,
+      "input_tokens": 1329,
+      "output_tokens": 201,
+      "cost_usd": 0.00032,
+      "is_mock": false,
       "validation": {
         "valid": true,
         "status": "success",
@@ -564,25 +560,25 @@
       },
       "extracted": {
         "document_type": "PASSPORT_BOOKLET",
-        "document_number": "ВА 192837",
+        "document_number": "ВА192837",
         "record_number": null,
         "holder": {
-          "last_name_ukr": null,
-          "first_name_ukr": null,
-          "patronymic_ukr": null,
-          "last_name_en": null,
-          "first_name_en": null
+          "last_name_ukr": "ВАСИЛЬЧУК",
+          "first_name_ukr": "РОМАН",
+          "patronymic_ukr": "ПЕТРОВИЧ",
+          "last_name_en": "VASYLCHUK",
+          "first_name_en": "ROMAN"
         },
         "gender": "MALE",
         "dates": {
-          "birth_date": null,
-          "issue_date": null,
+          "birth_date": "1968-03-12",
+          "issue_date": "1996-04-15",
           "expiry_date": null
         },
-        "issuing_authority": "ЛУЦЬКИМ МВ УМВС. 15.04.1996.",
+        "issuing_authority": "ЛУЦЬКИМ МВ УМВС",
         "mrz_line": null,
         "ocr_quality_flags": [],
-        "confidence_score": 0.98
+        "confidence_score": 1.0
       }
     },
     {
@@ -595,16 +591,16 @@
         "top_p": 1.0,
         "max_tokens": 1500
       },
-      "latency_ms": 397.0,
-      "input_tokens": 1010,
-      "output_tokens": 132,
-      "cost_usd": 0.0002307,
-      "is_mock": true,
+      "latency_ms": 3109.5,
+      "input_tokens": 1355,
+      "output_tokens": 187,
+      "cost_usd": 0.0003154,
+      "is_mock": false,
       "validation": {
         "valid": true,
-        "status": "success",
-        "repaired": false,
-        "repair_attempts": 0,
+        "status": "repaired",
+        "repaired": true,
+        "repair_attempts": 1,
         "error_message": null
       },
       "extracted": {
@@ -612,22 +608,22 @@
         "document_number": "АХВ 991823",
         "record_number": null,
         "holder": {
-          "last_name_ukr": null,
-          "first_name_ukr": null,
+          "last_name_ukr": "ГРИЦЕНКО",
+          "first_name_ukr": "ТАРАС",
           "patronymic_ukr": null,
-          "last_name_en": null,
-          "first_name_en": null
+          "last_name_en": "HRYTSENKO",
+          "first_name_en": "TARAS"
         },
         "gender": "UNKNOWN",
         "dates": {
           "birth_date": null,
-          "issue_date": null,
-          "expiry_date": null
+          "issue_date": "2019-08-10",
+          "expiry_date": "2049-08-10"
         },
-        "issuing_authority": "1241. КАТЕГОРІЯ B.",
+        "issuing_authority": "1241",
         "mrz_line": null,
         "ocr_quality_flags": [],
-        "confidence_score": 0.98
+        "confidence_score": 1.0
       }
     },
     {
@@ -640,11 +636,11 @@
         "top_p": 1.0,
         "max_tokens": 1500
       },
-      "latency_ms": 431.0,
-      "input_tokens": 1020,
-      "output_tokens": 138,
-      "cost_usd": 0.0002358,
-      "is_mock": true,
+      "latency_ms": 3136.0,
+      "input_tokens": 1345,
+      "output_tokens": 212,
+      "cost_usd": 0.0003289,
+      "is_mock": false,
       "validation": {
         "valid": true,
         "status": "success",
@@ -655,24 +651,24 @@
       "extracted": {
         "document_type": "FOREIGN_PASSPORT",
         "document_number": "FG992817",
-        "record_number": null,
+        "record_number": "19910902-03911",
         "holder": {
-          "last_name_ukr": null,
-          "first_name_ukr": null,
+          "last_name_ukr": "СИДОРЕНКО",
+          "first_name_ukr": "МАРІЯ",
           "patronymic_ukr": null,
-          "last_name_en": null,
-          "first_name_en": null
+          "last_name_en": "SYDORENKO",
+          "first_name_en": "MARIIA"
         },
-        "gender": "UNKNOWN",
+        "gender": "FEMALE",
         "dates": {
-          "birth_date": null,
-          "issue_date": null,
-          "expiry_date": null
+          "birth_date": "1991-09-02",
+          "issue_date": "2018-11-11",
+          "expiry_date": "2028-11-11"
         },
         "issuing_authority": null,
         "mrz_line": "P<UKRSYDORENKO<<MARIIA<<<<<<<<<<<<<<",
         "ocr_quality_flags": [],
-        "confidence_score": 0.98
+        "confidence_score": 1.0
       }
     },
     {
@@ -685,11 +681,11 @@
         "top_p": 1.0,
         "max_tokens": 1500
       },
-      "latency_ms": 382.0,
-      "input_tokens": 1005,
-      "output_tokens": 127,
-      "cost_usd": 0.000227,
-      "is_mock": true,
+      "latency_ms": 2999.25,
+      "input_tokens": 1346,
+      "output_tokens": 203,
+      "cost_usd": 0.0003237,
+      "is_mock": false,
       "validation": {
         "valid": true,
         "status": "success",
@@ -699,25 +695,25 @@
       },
       "extracted": {
         "document_type": "ID_CARD",
-        "document_number": null,
+        "document_number": "001928374",
         "record_number": "19890228-09182",
         "holder": {
-          "last_name_ukr": null,
-          "first_name_ukr": null,
-          "patronymic_ukr": null,
-          "last_name_en": null,
-          "first_name_en": null
+          "last_name_ukr": "КУЗЬМЕНКО",
+          "first_name_ukr": "ОЛЕНА",
+          "patronymic_ukr": "СЕРГІЇВНА",
+          "last_name_en": "KUZMENKO",
+          "first_name_en": "OLENA"
         },
         "gender": "FEMALE",
         "dates": {
-          "birth_date": null,
-          "issue_date": null,
-          "expiry_date": null
+          "birth_date": "1989-02-28",
+          "issue_date": "2023-02-28",
+          "expiry_date": "2029-02-28"
         },
-        "issuing_authority": "5612.",
+        "issuing_authority": "5612",
         "mrz_line": null,
         "ocr_quality_flags": [],
-        "confidence_score": 0.98
+        "confidence_score": 1.0
       }
     },
     {
@@ -730,11 +726,11 @@
         "top_p": 1.0,
         "max_tokens": 1500
       },
-      "latency_ms": 508.0,
-      "input_tokens": 997,
-      "output_tokens": 122,
-      "cost_usd": 0.0002227,
-      "is_mock": true,
+      "latency_ms": 2788.38,
+      "input_tokens": 1339,
+      "output_tokens": 193,
+      "cost_usd": 0.0003166,
+      "is_mock": false,
       "validation": {
         "valid": true,
         "status": "success",
@@ -743,26 +739,26 @@
         "error_message": null
       },
       "extracted": {
-        "document_type": "ID_CARD",
-        "document_number": null,
+        "document_type": "PASSPORT_BOOKLET",
+        "document_number": "МТ 391029",
         "record_number": null,
         "holder": {
-          "last_name_ukr": null,
-          "first_name_ukr": null,
-          "patronymic_ukr": null,
-          "last_name_en": null,
-          "first_name_en": null
+          "last_name_ukr": "МАРЧЕНКО",
+          "first_name_ukr": "ДАРИНА",
+          "patronymic_ukr": "МИКОЛАЇВНА",
+          "last_name_en": "MARCHENKO",
+          "first_name_en": "DARYNA"
         },
         "gender": "FEMALE",
         "dates": {
-          "birth_date": null,
-          "issue_date": null,
+          "birth_date": "1980-12-19",
+          "issue_date": "1997-01-10",
           "expiry_date": null
         },
         "issuing_authority": null,
         "mrz_line": null,
         "ocr_quality_flags": [],
-        "confidence_score": 0.98
+        "confidence_score": 1.0
       }
     },
     {
@@ -775,16 +771,16 @@
         "top_p": 1.0,
         "max_tokens": 1500
       },
-      "latency_ms": 521.0,
-      "input_tokens": 1001,
-      "output_tokens": 128,
-      "cost_usd": 0.0002269,
-      "is_mock": true,
+      "latency_ms": 2758.87,
+      "input_tokens": 1344,
+      "output_tokens": 192,
+      "cost_usd": 0.0003168,
+      "is_mock": false,
       "validation": {
         "valid": true,
-        "status": "success",
-        "repaired": false,
-        "repair_attempts": 0,
+        "status": "repaired",
+        "repaired": true,
+        "repair_attempts": 1,
         "error_message": null
       },
       "extracted": {
@@ -792,22 +788,22 @@
         "document_number": "ВАЕ 381920",
         "record_number": null,
         "holder": {
-          "last_name_ukr": null,
-          "first_name_ukr": null,
+          "last_name_ukr": "ЯКОВЕНКО",
+          "first_name_ukr": "СЕРГІЙ",
           "patronymic_ukr": null,
-          "last_name_en": null,
-          "first_name_en": null
+          "last_name_en": "YAKOVENKO",
+          "first_name_en": "SERHII"
         },
         "gender": "UNKNOWN",
         "dates": {
-          "birth_date": null,
-          "issue_date": null,
-          "expiry_date": null
+          "birth_date": "1977-07-14",
+          "issue_date": "2011-04-20",
+          "expiry_date": "2041-04-20"
         },
-        "issuing_authority": "0541.",
+        "issuing_authority": "0541",
         "mrz_line": null,
         "ocr_quality_flags": [],
-        "confidence_score": 0.98
+        "confidence_score": 1.0
       }
     },
     {
@@ -820,11 +816,11 @@
         "top_p": 1.0,
         "max_tokens": 1500
       },
-      "latency_ms": 386.0,
-      "input_tokens": 1006,
-      "output_tokens": 138,
-      "cost_usd": 0.0002337,
-      "is_mock": true,
+      "latency_ms": 2948.64,
+      "input_tokens": 1324,
+      "output_tokens": 210,
+      "cost_usd": 0.0003246,
+      "is_mock": false,
       "validation": {
         "valid": true,
         "status": "success",
@@ -835,24 +831,24 @@
       "extracted": {
         "document_type": "FOREIGN_PASSPORT",
         "document_number": "FJ192831",
-        "record_number": null,
+        "record_number": "19840615-03911",
         "holder": {
-          "last_name_ukr": null,
-          "first_name_ukr": null,
+          "last_name_ukr": "ПЕТРЕНКО",
+          "first_name_ukr": "ВОЛОДИМИР",
           "patronymic_ukr": null,
-          "last_name_en": null,
-          "first_name_en": null
+          "last_name_en": "PETRENKO",
+          "first_name_en": "VOLODYMYR"
         },
-        "gender": "UNKNOWN",
+        "gender": "MALE",
         "dates": {
-          "birth_date": null,
+          "birth_date": "1984-06-15",
           "issue_date": null,
-          "expiry_date": null
+          "expiry_date": "2032-06-15"
         },
         "issuing_authority": null,
         "mrz_line": "P<UKRPETRENKO<<VOLODYMYR<<<<<<<<<<<<<",
         "ocr_quality_flags": [],
-        "confidence_score": 0.98
+        "confidence_score": 1.0
       }
     },
     {
@@ -865,11 +861,11 @@
         "top_p": 1.0,
         "max_tokens": 1500
       },
-      "latency_ms": 528.0,
-      "input_tokens": 1004,
-      "output_tokens": 126,
-      "cost_usd": 0.0002262,
-      "is_mock": true,
+      "latency_ms": 3220.79,
+      "input_tokens": 1344,
+      "output_tokens": 201,
+      "cost_usd": 0.0003222,
+      "is_mock": false,
       "validation": {
         "valid": true,
         "status": "success",
@@ -879,25 +875,25 @@
       },
       "extracted": {
         "document_type": "ID_CARD",
-        "document_number": null,
+        "document_number": "20030412",
         "record_number": "20030412-08123",
         "holder": {
-          "last_name_ukr": null,
-          "first_name_ukr": null,
-          "patronymic_ukr": null,
-          "last_name_en": null,
-          "first_name_en": null
+          "last_name_ukr": "БІЛОУС",
+          "first_name_ukr": "АНДРІЙ",
+          "patronymic_ukr": "РОМАНОВИЧ",
+          "last_name_en": "BILOUS",
+          "first_name_en": "ANDRII"
         },
         "gender": "MALE",
         "dates": {
-          "birth_date": null,
-          "issue_date": null,
-          "expiry_date": null
+          "birth_date": "2003-04-12",
+          "issue_date": "2003-04-12",
+          "expiry_date": "2033-04-12"
         },
-        "issuing_authority": "7110.",
+        "issuing_authority": "7110",
         "mrz_line": null,
         "ocr_quality_flags": [],
-        "confidence_score": 0.98
+        "confidence_score": 1.0
       }
     },
     {
@@ -910,11 +906,11 @@
         "top_p": 1.0,
         "max_tokens": 1500
       },
-      "latency_ms": 503.0,
-      "input_tokens": 996,
-      "output_tokens": 135,
-      "cost_usd": 0.0002304,
-      "is_mock": true,
+      "latency_ms": 3262.0,
+      "input_tokens": 1332,
+      "output_tokens": 203,
+      "cost_usd": 0.0003216,
+      "is_mock": false,
       "validation": {
         "valid": true,
         "status": "success",
@@ -924,25 +920,25 @@
       },
       "extracted": {
         "document_type": "PASSPORT_BOOKLET",
-        "document_number": "НВ 849201",
+        "document_number": "НВ849201",
         "record_number": null,
         "holder": {
-          "last_name_ukr": null,
-          "first_name_ukr": null,
-          "patronymic_ukr": null,
-          "last_name_en": null,
-          "first_name_en": null
+          "last_name_ukr": "ФЕДОРЕНКО",
+          "first_name_ukr": "ВІТАЛІЙ",
+          "patronymic_ukr": "ІВАНОВИЧ",
+          "last_name_en": "FEDORENKO",
+          "first_name_en": "VITALII"
         },
         "gender": "MALE",
         "dates": {
-          "birth_date": null,
+          "birth_date": "1971-10-03",
           "issue_date": null,
           "expiry_date": null
         },
-        "issuing_authority": "КИЇВСЬКИМ РВ М. ХАРКОВА 1995 Р.",
+        "issuing_authority": "КИЇВСЬКИМ РВ М. ХАРКОВА",
         "mrz_line": null,
         "ocr_quality_flags": [],
-        "confidence_score": 0.98
+        "confidence_score": 1.0
       }
     },
     {
@@ -955,39 +951,39 @@
         "top_p": 1.0,
         "max_tokens": 1500
       },
-      "latency_ms": 401.0,
-      "input_tokens": 1011,
-      "output_tokens": 127,
-      "cost_usd": 0.0002278,
-      "is_mock": true,
+      "latency_ms": 3146.19,
+      "input_tokens": 1356,
+      "output_tokens": 192,
+      "cost_usd": 0.0003186,
+      "is_mock": false,
       "validation": {
         "valid": true,
-        "status": "success",
-        "repaired": false,
-        "repair_attempts": 0,
+        "status": "repaired",
+        "repaired": true,
+        "repair_attempts": 1,
         "error_message": null
       },
       "extracted": {
         "document_type": "DRIVERS_LICENSE",
-        "document_number": "АВВ 728193",
+        "document_number": "АВВ728193",
         "record_number": null,
         "holder": {
-          "last_name_ukr": null,
-          "first_name_ukr": null,
+          "last_name_ukr": "МАТВІЄНКО",
+          "first_name_ukr": "КАТЕРИНА",
           "patronymic_ukr": null,
-          "last_name_en": null,
-          "first_name_en": null
+          "last_name_en": "MATVIIENKO",
+          "first_name_en": "KATERYNA"
         },
         "gender": "UNKNOWN",
         "dates": {
-          "birth_date": null,
-          "issue_date": null,
-          "expiry_date": null
+          "birth_date": "1990-10-05",
+          "issue_date": "2016-03-12",
+          "expiry_date": "2046-03-12"
         },
         "issuing_authority": null,
         "mrz_line": null,
         "ocr_quality_flags": [],
-        "confidence_score": 0.98
+        "confidence_score": 1.0
       }
     },
     {
@@ -1000,11 +996,11 @@
         "top_p": 1.0,
         "max_tokens": 1500
       },
-      "latency_ms": 399.0,
-      "input_tokens": 1010,
-      "output_tokens": 146,
-      "cost_usd": 0.0002391,
-      "is_mock": true,
+      "latency_ms": 2923.26,
+      "input_tokens": 1326,
+      "output_tokens": 202,
+      "cost_usd": 0.0003201,
+      "is_mock": false,
       "validation": {
         "valid": true,
         "status": "success",
@@ -1015,24 +1011,24 @@
       "extracted": {
         "document_type": "FOREIGN_PASSPORT",
         "document_number": "FR391024",
-        "record_number": null,
+        "record_number": "19930125-03911",
         "holder": {
-          "last_name_ukr": null,
-          "first_name_ukr": null,
+          "last_name_ukr": "STEPANENKO",
+          "first_name_ukr": "INNA",
           "patronymic_ukr": null,
-          "last_name_en": null,
-          "first_name_en": null
+          "last_name_en": "STEPANENKO",
+          "first_name_en": "INNA"
         },
-        "gender": "UNKNOWN",
+        "gender": "FEMALE",
         "dates": {
-          "birth_date": null,
+          "birth_date": "1993-01-25",
           "issue_date": null,
-          "expiry_date": null
+          "expiry_date": "2029-08-14"
         },
-        "issuing_authority": "3201. P<UKRSTEPANENKO<<INNA",
+        "issuing_authority": "3201",
         "mrz_line": "P<UKRSTEPANENKO<<INNA<<<<<<<<<<<<<<<<",
         "ocr_quality_flags": [],
-        "confidence_score": 0.98
+        "confidence_score": 1.0
       }
     },
     {
@@ -1045,11 +1041,11 @@
         "top_p": 1.0,
         "max_tokens": 1500
       },
-      "latency_ms": 394.0,
-      "input_tokens": 1009,
-      "output_tokens": 128,
-      "cost_usd": 0.0002281,
-      "is_mock": true,
+      "latency_ms": 2627.51,
+      "input_tokens": 1325,
+      "output_tokens": 188,
+      "cost_usd": 0.0003116,
+      "is_mock": false,
       "validation": {
         "valid": true,
         "status": "success",
@@ -1062,22 +1058,22 @@
         "document_number": "003910283",
         "record_number": "19970430-01928",
         "holder": {
-          "last_name_ukr": null,
-          "first_name_ukr": null,
+          "last_name_ukr": "ДАНИЛЕНКО",
+          "first_name_ukr": "МАКСИМ",
           "patronymic_ukr": null,
-          "last_name_en": null,
-          "first_name_en": null
+          "last_name_en": "DANYLENKO",
+          "first_name_en": "MAKSYM"
         },
-        "gender": "UNKNOWN",
+        "gender": "MALE",
         "dates": {
-          "birth_date": null,
+          "birth_date": "1997-04-30",
           "issue_date": null,
-          "expiry_date": null
+          "expiry_date": "2027-04-30"
         },
         "issuing_authority": null,
         "mrz_line": null,
         "ocr_quality_flags": [],
-        "confidence_score": 0.98
+        "confidence_score": 1.0
       }
     },
     {
@@ -1090,11 +1086,11 @@
         "top_p": 1.0,
         "max_tokens": 1500
       },
-      "latency_ms": 509.0,
-      "input_tokens": 998,
-      "output_tokens": 137,
-      "cost_usd": 0.0002319,
-      "is_mock": true,
+      "latency_ms": 2944.44,
+      "input_tokens": 1339,
+      "output_tokens": 211,
+      "cost_usd": 0.0003274,
+      "is_mock": false,
       "validation": {
         "valid": true,
         "status": "success",
@@ -1104,25 +1100,25 @@
       },
       "extracted": {
         "document_type": "PASSPORT_BOOKLET",
-        "document_number": "СС 291039",
+        "document_number": "СС291039",
         "record_number": null,
         "holder": {
-          "last_name_ukr": null,
-          "first_name_ukr": null,
-          "patronymic_ukr": null,
-          "last_name_en": null,
-          "first_name_en": null
+          "last_name_ukr": "ОНОПРІЄНКО",
+          "first_name_ukr": "ГАЛИНА",
+          "patronymic_ukr": "ПЕТРІВНА",
+          "last_name_en": "ONOPRIYENKO",
+          "first_name_en": "HALYNA"
         },
         "gender": "FEMALE",
         "dates": {
-          "birth_date": null,
-          "issue_date": null,
+          "birth_date": "1965-08-12",
+          "issue_date": "1996-12-01",
           "expiry_date": null
         },
-        "issuing_authority": "ДНІПРОВСЬКИМ РВ КИЄВА 1996-12-01.",
+        "issuing_authority": "ДНІПРОВСЬКИМ РВ КИЄВА",
         "mrz_line": null,
         "ocr_quality_flags": [],
-        "confidence_score": 0.98
+        "confidence_score": 1.0
       }
     },
     {
@@ -1135,39 +1131,39 @@
         "top_p": 1.0,
         "max_tokens": 1500
       },
-      "latency_ms": 503.0,
-      "input_tokens": 996,
-      "output_tokens": 127,
-      "cost_usd": 0.0002256,
-      "is_mock": true,
+      "latency_ms": 2712.19,
+      "input_tokens": 1326,
+      "output_tokens": 188,
+      "cost_usd": 0.0003117,
+      "is_mock": false,
       "validation": {
         "valid": true,
-        "status": "success",
-        "repaired": false,
-        "repair_attempts": 0,
+        "status": "repaired",
+        "repaired": true,
+        "repair_attempts": 1,
         "error_message": null
       },
       "extracted": {
         "document_type": "DRIVERS_LICENSE",
-        "document_number": "ВСА 391820",
+        "document_number": "ВСА391820",
         "record_number": null,
         "holder": {
-          "last_name_ukr": null,
-          "first_name_ukr": null,
+          "last_name_ukr": "ЛИТВИН",
+          "first_name_ukr": "ОЛЕКСАНДР",
           "patronymic_ukr": null,
-          "last_name_en": null,
-          "first_name_en": null
+          "last_name_en": "LYTVYN",
+          "first_name_en": "OLEKSANDR"
         },
         "gender": "UNKNOWN",
         "dates": {
-          "birth_date": null,
-          "issue_date": null,
-          "expiry_date": null
+          "birth_date": "1982-03-19",
+          "issue_date": "2020-01-15",
+          "expiry_date": "2050-01-15"
         },
         "issuing_authority": null,
         "mrz_line": null,
         "ocr_quality_flags": [],
-        "confidence_score": 0.98
+        "confidence_score": 1.0
       }
     },
     {
@@ -1180,11 +1176,11 @@
         "top_p": 1.0,
         "max_tokens": 1500
       },
-      "latency_ms": 410.0,
-      "input_tokens": 1014,
-      "output_tokens": 139,
-      "cost_usd": 0.0002355,
-      "is_mock": true,
+      "latency_ms": 3651.31,
+      "input_tokens": 1336,
+      "output_tokens": 210,
+      "cost_usd": 0.0003264,
+      "is_mock": false,
       "validation": {
         "valid": true,
         "status": "success",
@@ -1195,24 +1191,24 @@
       "extracted": {
         "document_type": "FOREIGN_PASSPORT",
         "document_number": "FL819203",
-        "record_number": null,
+        "record_number": "19980909-03911",
         "holder": {
-          "last_name_ukr": null,
-          "first_name_ukr": null,
+          "last_name_ukr": "ГОЛУБ",
+          "first_name_ukr": "НАТАЛІЯ",
           "patronymic_ukr": null,
-          "last_name_en": null,
-          "first_name_en": null
+          "last_name_en": "HOLUB",
+          "first_name_en": "NATALIIA"
         },
         "gender": "FEMALE",
         "dates": {
-          "birth_date": null,
-          "issue_date": null,
-          "expiry_date": null
+          "birth_date": "1998-09-09",
+          "issue_date": "2022-05-10",
+          "expiry_date": "2032-05-10"
         },
         "issuing_authority": null,
         "mrz_line": "P<UKRHOLUB<<NATALIIA<<<<<<<<<<<<<<<<<<<<",
         "ocr_quality_flags": [],
-        "confidence_score": 0.98
+        "confidence_score": 1.0
       }
     },
     {
@@ -1225,11 +1221,11 @@
         "top_p": 1.0,
         "max_tokens": 1500
       },
-      "latency_ms": 396.0,
-      "input_tokens": 1009,
-      "output_tokens": 129,
-      "cost_usd": 0.0002288,
-      "is_mock": true,
+      "latency_ms": 2560.45,
+      "input_tokens": 1352,
+      "output_tokens": 194,
+      "cost_usd": 0.0003192,
+      "is_mock": false,
       "validation": {
         "valid": true,
         "status": "success",
@@ -1242,22 +1238,22 @@
         "document_number": "002819034",
         "record_number": "19941214-03912",
         "holder": {
-          "last_name_ukr": null,
-          "first_name_ukr": null,
-          "patronymic_ukr": null,
-          "last_name_en": null,
-          "first_name_en": null
+          "last_name_ukr": "ВОЛОШИН",
+          "first_name_ukr": "АРТЕМ",
+          "patronymic_ukr": "ДМИТРОВИЧ",
+          "last_name_en": "VOLOSHYN",
+          "first_name_en": "ARTEM"
         },
-        "gender": "UNKNOWN",
+        "gender": "MALE",
         "dates": {
-          "birth_date": null,
+          "birth_date": "1994-12-14",
           "issue_date": null,
-          "expiry_date": null
+          "expiry_date": "2034-12-14"
         },
-        "issuing_authority": "6811.",
+        "issuing_authority": "6811",
         "mrz_line": null,
         "ocr_quality_flags": [],
-        "confidence_score": 0.98
+        "confidence_score": 1.0
       }
     },
     {
@@ -1270,11 +1266,11 @@
         "top_p": 1.0,
         "max_tokens": 1500
       },
-      "latency_ms": 487.0,
-      "input_tokens": 991,
-      "output_tokens": 134,
-      "cost_usd": 0.000229,
-      "is_mock": true,
+      "latency_ms": 2998.91,
+      "input_tokens": 1324,
+      "output_tokens": 216,
+      "cost_usd": 0.0003282,
+      "is_mock": false,
       "validation": {
         "valid": true,
         "status": "success",
@@ -1284,25 +1280,25 @@
       },
       "extracted": {
         "document_type": "PASSPORT_BOOKLET",
-        "document_number": "АМ 591023",
+        "document_number": "АМ591023",
         "record_number": null,
         "holder": {
-          "last_name_ukr": null,
-          "first_name_ukr": null,
-          "patronymic_ukr": null,
-          "last_name_en": null,
-          "first_name_en": null
+          "last_name_ukr": "ІВАНЧУК",
+          "first_name_ukr": "ВАСИЛЬ",
+          "patronymic_ukr": "МИХАЙЛОВИЧ",
+          "last_name_en": "IVANCHUK",
+          "first_name_en": "VASYL"
         },
         "gender": "MALE",
         "dates": {
-          "birth_date": null,
-          "issue_date": null,
+          "birth_date": "1959-01-01",
+          "issue_date": "1997-01-01",
           "expiry_date": null
         },
-        "issuing_authority": "УЖГОРОДСЬКИМ МВ 1997 РОКУ.",
+        "issuing_authority": "УЖГОРОДСЬКИМ МВ",
         "mrz_line": null,
         "ocr_quality_flags": [],
-        "confidence_score": 0.98
+        "confidence_score": 1.0
       }
     },
     {
@@ -1315,39 +1311,39 @@
         "top_p": 1.0,
         "max_tokens": 1500
       },
-      "latency_ms": 500.0,
-      "input_tokens": 995,
-      "output_tokens": 122,
-      "cost_usd": 0.0002224,
-      "is_mock": true,
+      "latency_ms": 2778.06,
+      "input_tokens": 1334,
+      "output_tokens": 190,
+      "cost_usd": 0.0003141,
+      "is_mock": false,
       "validation": {
         "valid": true,
-        "status": "success",
-        "repaired": false,
-        "repair_attempts": 0,
+        "status": "repaired",
+        "repaired": true,
+        "repair_attempts": 1,
         "error_message": null
       },
       "extracted": {
-        "document_type": "ID_CARD",
-        "document_number": null,
+        "document_type": "DRIVERS_LICENSE",
+        "document_number": "СХЕ928301",
         "record_number": null,
         "holder": {
-          "last_name_ukr": null,
-          "first_name_ukr": null,
+          "last_name_ukr": "ДОВЖЕНКО",
+          "first_name_ukr": "ВАЛЕРІЙ",
           "patronymic_ukr": null,
-          "last_name_en": null,
-          "first_name_en": null
+          "last_name_en": "DOVZHENKO",
+          "first_name_en": "VALERII"
         },
         "gender": "UNKNOWN",
         "dates": {
-          "birth_date": null,
-          "issue_date": null,
-          "expiry_date": null
+          "birth_date": "1991-07-22",
+          "issue_date": "2017-09-01",
+          "expiry_date": "2047-09-01"
         },
         "issuing_authority": null,
         "mrz_line": null,
         "ocr_quality_flags": [],
-        "confidence_score": 0.98
+        "confidence_score": 1.0
       }
     },
     {
@@ -1360,11 +1356,11 @@
         "top_p": 1.0,
         "max_tokens": 1500
       },
-      "latency_ms": 529.0,
-      "input_tokens": 1004,
-      "output_tokens": 142,
-      "cost_usd": 0.0002358,
-      "is_mock": true,
+      "latency_ms": 2844.31,
+      "input_tokens": 1325,
+      "output_tokens": 201,
+      "cost_usd": 0.0003194,
+      "is_mock": false,
       "validation": {
         "valid": true,
         "status": "success",
@@ -1377,22 +1373,22 @@
         "document_number": "FB482910",
         "record_number": "19870303-01829",
         "holder": {
-          "last_name_ukr": null,
-          "first_name_ukr": null,
+          "last_name_ukr": "КОЗЛОВ",
+          "first_name_ukr": "ЄВГЕН",
           "patronymic_ukr": null,
-          "last_name_en": null,
-          "first_name_en": null
+          "last_name_en": "KOZLOV",
+          "first_name_en": "YEVHEN"
         },
         "gender": "MALE",
         "dates": {
-          "birth_date": null,
+          "birth_date": "1987-03-03",
           "issue_date": null,
           "expiry_date": null
         },
         "issuing_authority": null,
         "mrz_line": "P<UKRKOZLOV<<YEVHEN<<<<<<<<<<<<<<<<<<<<<",
         "ocr_quality_flags": [],
-        "confidence_score": 0.98
+        "confidence_score": 1.0
       }
     }
   ]

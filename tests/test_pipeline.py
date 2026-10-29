@@ -9,7 +9,7 @@ from pathlib import Path
 
 from pydantic import ValidationError
 
-from src.client import ProviderClient, LocalClient, MockFallbackClient
+from src.client import BaseLLMClient, ProviderClient, LocalClient, MockFallbackClient
 from src.config import CONFIG_DETERMINISTIC, CONFIG_SAMPLING
 from src.schema import ExtractedDocument, DocumentType, Gender
 from src.validator import validate_and_repair
@@ -100,8 +100,11 @@ class TestClientInterface(unittest.TestCase):
     """Перевірка спільного інтерфейсу BaseLLMClient для обох моделей."""
 
     def test_clients_produce_unified_llm_response(self):
-        p_client = ProviderClient()
-        l_client = LocalClient()
+        self.assertTrue(issubclass(ProviderClient, BaseLLMClient))
+        self.assertTrue(issubclass(LocalClient, BaseLLMClient))
+
+        p_client = MockFallbackClient(model_name="gpt-4o-mini", client_type="provider")
+        l_client = MockFallbackClient(model_name="llama3.2", client_type="local")
 
         prompt = "Extract document"
         text = "ПАСПОРТ СЕРІЯ ЕР 492018 КРАВЧУК МИХАЙЛО"
