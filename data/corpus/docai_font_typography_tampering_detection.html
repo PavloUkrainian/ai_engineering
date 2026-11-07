@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Fraud Detection Guide: Font Typographical Anomaly and Kerning Verification</title>
+    <meta name="doc-type" content="technical_guide">
+    <meta name="version-date" content="2023-01-24">
+</head>
+<body>
+    <header>
+        <h1>Fraud Detection Guide: Font Typographical Anomaly and Kerning Verification</h1>
+        <div class="metadata">
+            <span class="type">Type: technical_guide</span>
+            <span class="date">Date: 2023-01-24</span>
+        </div>
+    </header>
+    <main>
+        
+        <section>
+            <h2>1. Strict Monospace Geometry in MRZ</h2>
+            <p>Every character in an authentic ICAO MRZ conforms strictly to the OCR-B typeface standard with a fixed pitch of 2.54 mm (0.1 inch). Inter-character gaps and baseline alignment must remain perfectly uniform across the entire 30 or 44 character line.</p>
+        </section>
+        <section>
+            <h2>2. Digit Splicing and Thickness Anomalies</h2>
+            <p>Digital alteration (e.g. changing birth year from 1999 to 1989) inevitably introduces subtle stroke-width discrepancies, antialiasing halos, or baseline vertical misalignment exceeding 2 pixels. Deep Siamese networks compare candidate glyphs against an authentic template database.</p>
+        </section>
+    </main>
+</body>
+</html>

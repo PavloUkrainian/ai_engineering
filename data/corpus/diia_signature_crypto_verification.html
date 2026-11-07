@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Integration Specification: Diia.Signature Cryptographic Verification Architecture</title>
+    <meta name="doc-type" content="technical_guide">
+    <meta name="version-date" content="2022-11-19">
+</head>
+<body>
+    <header>
+        <h1>Integration Specification: Diia.Signature Cryptographic Verification Architecture</h1>
+        <div class="metadata">
+            <span class="type">Type: technical_guide</span>
+            <span class="date">Date: 2022-11-19</span>
+        </div>
+    </header>
+    <main>
+        
+        <section>
+            <h2>1. Qualified Electronic Signature (QES) Standard</h2>
+            <p>Дія.Підпис is a Qualified Electronic Signature compliant with DSTU 4145-2002 and eIDAS standards. The private key is generated within the Secure Enclave / TEE of the user's smartphone after biometric facial verification against the Unified State Demographic Register.</p>
+        </section>
+        <section>
+            <h2>2. Online OCSP and CRL Validation</h2>
+            <p>Upon receiving a signed payload, the FinTech backend must immediately query the Qualified Trust Service Provider (QTSP) via Online Certificate Status Protocol (OCSP) to verify that the signer's certificate was valid and not revoked at the exact moment of signing.</p>
+        </section>
+    </main>
+</body>
+</html>

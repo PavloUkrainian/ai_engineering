@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>DocAI Pipeline Specification: Automated MRZ Bounding Box Segmentation</title>
+    <meta name="doc-type" content="technical_guide">
+    <meta name="version-date" content="2023-03-30">
+</head>
+<body>
+    <header>
+        <h1>DocAI Pipeline Specification: Automated MRZ Bounding Box Segmentation</h1>
+        <div class="metadata">
+            <span class="type">Type: technical_guide</span>
+            <span class="date">Date: 2023-03-30</span>
+        </div>
+    </header>
+    <main>
+        
+        <section>
+            <h2>1. Morphological Black-Hat Filtering</h2>
+            <p>To localize the MRZ band on TD1 and TD3 documents, a directional morphological Black-Hat filter with a horizontal structuring element (width 25, height 3) is applied. This highlights dense, high-frequency dark character blocks against lighter substrate background.</p>
+        </section>
+        <section>
+            <h2>2. Horizontal Projection Profiling</h2>
+            <p>Row-wise intensity projection profiling identifies individual text lines. The vertical distance between adjacent baseline peaks must match the standard OCR-B line spacing (tolerance 5%). Any rotational skew exceeding 3.0 degrees must be corrected via Radon transform prior to character segmentation.</p>
+        </section>
+    </main>
+</body>
+</html>

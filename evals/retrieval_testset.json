@@ -1,0 +1,107 @@
+[
+  {
+    "query_id": "retrieval_01",
+    "query": "Які вагові коефіцієнти використовуються для розрахунку контрольної суми MRZ у стандарті ICAO 9303?",
+    "expected_chunk_ids": ["icao_doc9303_check_digit_algorithms_ch000"],
+    "expected_doc_id": "icao_doc9303_check_digit_algorithms",
+    "category": "standards_mrz"
+  },
+  {
+    "query_id": "retrieval_02",
+    "query": "Яка структура машинозчитуваної зони для ID-картки формату TD1 (кількість рядків та символів)?",
+    "expected_chunk_ids": ["icao_doc9303_p3_td1_ch003"],
+    "expected_doc_id": "icao_doc9303_p3_td1",
+    "category": "standards_mrz"
+  },
+  {
+    "query_id": "retrieval_03",
+    "query": "Скільки рядків і символів містить MRZ паспорта формату TD3?",
+    "expected_chunk_ids": ["icao_doc9303_p4_td3_passports_ch002"],
+    "expected_doc_id": "icao_doc9303_p4_td3_passports",
+    "category": "standards_mrz"
+  },
+  {
+    "query_id": "retrieval_04",
+    "query": "Як розраховується 10-й контрольний розряд для українського податкового номера РНОКПП (ІПН)?",
+    "expected_chunk_ids": ["rnocpp_tax_id_specifications_ch001", "rnocpp_tax_id_specifications_ch000"],
+    "expected_doc_id": "rnocpp_tax_id_specifications",
+    "category": "tax_id"
+  },
+  {
+    "query_id": "retrieval_05",
+    "query": "Які вимоги встановлює Положення НБУ № 65 до проведення сеансу відеоверифікації клієнта?",
+    "expected_chunk_ids": ["nbu_resolution_65_remote_kyc_ch001", "nbu_resolution_65_remote_kyc_ch000"],
+    "expected_doc_id": "nbu_resolution_65_remote_kyc",
+    "category": "nbu_regulation"
+  },
+  {
+    "query_id": "retrieval_06",
+    "query": "Який поріг дисперсії Лапласа (Laplacian variance) використовується для відсіювання розмитих фото документів?",
+    "expected_chunk_ids": ["docai_blur_glare_shadow_detection_ch000"],
+    "expected_doc_id": "docai_blur_glare_shadow_detection",
+    "category": "docai_quality"
+  },
+  {
+    "query_id": "retrieval_07",
+    "query": "Яка мінімальна роздільна здатність у DPI необхідна для якісного розпізнавання OCR та мікродруку?",
+    "expected_chunk_ids": ["docai_image_resolution_dpi_standards_ch000"],
+    "expected_doc_id": "docai_image_resolution_dpi_standards",
+    "category": "docai_quality"
+  },
+  {
+    "query_id": "retrieval_08",
+    "query": "Який термін давності документа допускається для підтвердження адреси проживання (Proof of Address)?",
+    "expected_chunk_ids": ["fintech_secondary_proof_address_ch001", "fintech_secondary_proof_address_ch000"],
+    "expected_doc_id": "fintech_secondary_proof_address",
+    "category": "kyc_policy"
+  },
+  {
+    "query_id": "retrieval_09",
+    "query": "Хто вважається іноземними та національними публічними діячами (PEP) за рекомендацією FATF 12?",
+    "expected_chunk_ids": ["fatf_recommendation_12_pep_ch000"],
+    "expected_doc_id": "fatf_recommendation_12_pep",
+    "category": "fatf_pep"
+  },
+  {
+    "query_id": "retrieval_10",
+    "query": "Якому стандарту відповідає кваліфікований електронний підпис Дія.Підпис та як генерується приватний ключ?",
+    "expected_chunk_ids": ["diia_signature_crypto_verification_ch000"],
+    "expected_doc_id": "diia_signature_crypto_verification",
+    "category": "crypto_identity"
+  },
+  {
+    "query_id": "retrieval_11",
+    "query": "У якому віці обов'язково вклеюються нові фотографії в український паспорт-книжечку зразка 1994 року?",
+    "expected_chunk_ids": ["ukrainian_passport_1994_booklet_rules_ch000"],
+    "expected_doc_id": "ukrainian_passport_1994_booklet_rules",
+    "category": "identity_documents"
+  },
+  {
+    "query_id": "retrieval_12",
+    "query": "Яка розбіжність подібності між основним портретом і ghost-портретом свідчить про підробку?",
+    "expected_chunk_ids": ["docai_ghost_portrait_cross_check_ch001"],
+    "expected_doc_id": "docai_ghost_portrait_cross_check",
+    "category": "fraud_detection"
+  },
+  {
+    "query_id": "retrieval_13",
+    "query": "Протягом якого максимального часу дані ідентифікації через BankID НБУ вважаються актуальними?",
+    "expected_chunk_ids": ["bankid_nbu_integration_protocol_ch001"],
+    "expected_doc_id": "bankid_nbu_integration_protocol",
+    "category": "nbu_bankid"
+  },
+  {
+    "query_id": "retrieval_14",
+    "query": "Який поріг нечіткого збігу (fuzzy matching similarity) встановлено для автоматичного скринінгу санкцій РНБО та OFAC?",
+    "expected_chunk_ids": ["sanctions_pep_screening_standards_ch001"],
+    "expected_doc_id": "sanctions_pep_screening_standards",
+    "category": "sanctions_aml"
+  },
+  {
+    "query_id": "retrieval_15",
+    "query": "Чим відрізняється пасивний контроль присутності (passive liveness) від активного за стандартом ISO 30107?",
+    "expected_chunk_ids": ["liveness_detection_iso30107_standards_ch001"],
+    "expected_doc_id": "liveness_detection_iso30107_standards",
+    "category": "biometric_security"
+  }
+]

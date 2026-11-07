@@ -40,12 +40,46 @@ def print_table(summaries):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="AI Engineering: Document Information Extraction Pipeline")
-    parser.add_argument("--step", type=int, choices=[1, 2, 3, 4], help="Запустити конкретний крок (1, 2, 3 або 4). За замовчуванням запускаються всі.")
+    parser = argparse.ArgumentParser(description="AI Engineering: Document Information Extraction & RAG Pipeline")
+    parser.add_argument("--step", type=int, choices=[1, 2, 3, 4], help="Запустити конкретний крок Кейсу 1 (Вилучення даних)")
+    parser.add_argument("--rag-step", type=int, choices=[1, 2, 3, 4], help="Запустити конкретний крок Кейсу 2 (RAG & Evals)")
+    parser.add_argument("--rag", action="store_true", help="Запустити повний наскрізний цикл Кейсу 2 (RAG: Кроки 1-4)")
     args = parser.parse_args()
 
     results_dir = Path("results")
     results_dir.mkdir(exist_ok=True)
+
+    if args.rag:
+        logger.info("=== Запуск повного наскрізного циклу Кейсу 2 (RAG & Evals) ===")
+        from src.run_step1 import run_step1
+        from src.eval_retrieval import run_step2
+        from src.run_step3 import run_step3
+        from src.run_evals import run_evals
+        run_step1()
+        run_step2()
+        run_step3()
+        run_evals()
+        return
+
+    if args.rag_step == 1:
+        from src.run_step1 import run_step1
+        run_step1()
+        return
+
+    if args.rag_step == 2:
+        from src.eval_retrieval import run_step2
+        run_step2()
+        return
+
+    if args.rag_step == 3:
+        from src.run_step3 import run_step3
+        run_step3()
+        return
+
+    if args.rag_step == 4:
+        from src.run_evals import run_evals
+        run_evals()
+        return
 
     if args.step == 1:
         logger.info("=== Виконання Кроку 1: Схема + Baseline-промпт (v1) на Provider моделі ===")

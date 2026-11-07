@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>DocAI Computer Vision Standard: Image Resolution and Pre-processing Benchmarks</title>
+    <meta name="doc-type" content="technical_guide">
+    <meta name="version-date" content="2023-05-14">
+</head>
+<body>
+    <header>
+        <h1>DocAI Computer Vision Standard: Image Resolution and Pre-processing Benchmarks</h1>
+        <div class="metadata">
+            <span class="type">Type: technical_guide</span>
+            <span class="date">Date: 2023-05-14</span>
+        </div>
+    </header>
+    <main>
+        
+        <section>
+            <h2>1. Minimum DPI Thresholds for OCR Accuracy</h2>
+            <p>Optical Character Recognition of identity documents requires an effective resolution of at least 300 DPI across the entire bounding box of the document. For reading microprinted security text (<= 0.25 mm) or fine guilloche lines, 600 DPI is required. Images below 150 DPI suffer an exponential character error rate (CER > 18%).</p>
+        </section>
+        <section>
+            <h2>2. Dynamic Range and Color Depth</h2>
+            <p>Captured frames must feature 24-bit RGB color depth. Grayscale or aggressive binarization must be avoided during initial ingestion to preserve watermark gradients and fluorescent fiber detection under color filtering.</p>
+        </section>
+    </main>
+</body>
+</html>

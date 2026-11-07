@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Integration Guide: BankID NBU OAuth2 Protocol and Scopes for FinTech</title>
+    <meta name="doc-type" content="technical_guide">
+    <meta name="version-date" content="2023-06-25">
+</head>
+<body>
+    <header>
+        <h1>Integration Guide: BankID NBU OAuth2 Protocol and Scopes for FinTech</h1>
+        <div class="metadata">
+            <span class="type">Type: technical_guide</span>
+            <span class="date">Date: 2023-06-25</span>
+        </div>
+    </header>
+    <main>
+        
+        <section>
+            <h2>1. Authorization Flow and Scopes</h2>
+            <p>BankID NBU operates over OAuth 2.0 / OpenID Connect. The client application initiates an authorization request with scopes 'customer_identity', 'passport_data', and 'tax_number'. The identifying bank cryptographically signs the returned customer payload with an X.509 certificate.</p>
+        </section>
+        <section>
+            <h2>2. Data Freshness and Re-verification Requirements</h2>
+            <p>Identification data received via BankID NBU carries an issuance timestamp. Under NBU rules, customer data obtained via BankID is considered freshly verified for a maximum of 12 months, after which updated identity data must be requested.</p>
+        </section>
+    </main>
+</body>
+</html>

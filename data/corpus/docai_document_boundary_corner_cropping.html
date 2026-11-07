@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>DocAI Computer Vision: Perspective Correction and Corner Quad Detection</title>
+    <meta name="doc-type" content="technical_guide">
+    <meta name="version-date" content="2022-10-18">
+</head>
+<body>
+    <header>
+        <h1>DocAI Computer Vision: Perspective Correction and Corner Quad Detection</h1>
+        <div class="metadata">
+            <span class="type">Type: technical_guide</span>
+            <span class="date">Date: 2022-10-18</span>
+        </div>
+    </header>
+    <main>
+        
+        <section>
+            <h2>1. Quad Corner Detection and Aspect Ratio Bounds</h2>
+            <p>Document boundary localization uses deep segmentation networks to predict four corner coordinates (top-left, top-right, bottom-right, bottom-left). All four corners must lie within the camera viewport. The aspect ratio of the rectified quad must conform to ID-1 (1.586 +/- 0.05) or ID-3 (1.420 +/- 0.05).</p>
+        </section>
+        <section>
+            <h2>2. Perspective Warp Transformation</h2>
+            <p>A 3x3 homography matrix transforms the perspective-distorted quadrilateral into an orthogonal rectangular canvas of standard pixel dimensions (1012x638 pixels for ID-1). Truncated corners exceeding 15 pixels along any edge result in a fatal cropping defect code (ERR_DOC_CROPPED).</p>
+        </section>
+    </main>
+</body>
+</html>

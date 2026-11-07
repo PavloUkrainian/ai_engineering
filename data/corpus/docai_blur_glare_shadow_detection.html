@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>DocAI Quality Assessment: Algorithmic Blur, Glare, and Shadow Filtering</title>
+    <meta name="doc-type" content="technical_guide">
+    <meta name="version-date" content="2023-07-22">
+</head>
+<body>
+    <header>
+        <h1>DocAI Quality Assessment: Algorithmic Blur, Glare, and Shadow Filtering</h1>
+        <div class="metadata">
+            <span class="type">Type: technical_guide</span>
+            <span class="date">Date: 2023-07-22</span>
+        </div>
+    </header>
+    <main>
+        
+        <section>
+            <h2>1. Blur Detection using Laplacian Variance</h2>
+            <p>Document sharpness is evaluated by convolving the grayscale image with a standard 3x3 Laplacian kernel and calculating the variance of the response map. Images exhibiting a Laplacian variance score below 100.0 are classified as blurred and immediately rejected with an in-app prompt to stabilize the mobile camera.</p>
+        </section>
+        <section>
+            <h2>2. Specular Glare Region Masking</h2>
+            <p>Specular glare occurs when camera flash or ambient lighting reflects directly off glossy plastic laminate. Pixels with luminance Y > 250 in the YUV space across a contiguous area exceeding 1.5% of the MRZ or VIZ boundary mask trigger an automatic glare rejection.</p>
+        </section>
+    </main>
+</body>
+</html>

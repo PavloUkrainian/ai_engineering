@@ -1,0 +1,88 @@
+{
+  "samples_count": 10,
+  "agreement_rate_percent": 60.0,
+  "mean_absolute_error": 0.14,
+  "pearson_correlation": 0.887,
+  "samples": [
+    {
+      "id": "calib_01",
+      "human_score": 1.0,
+      "judge_score": 0.4,
+      "diff": 0.6,
+      "agreed": false,
+      "judge_reasoning": "Частково правильно: вказано ваги 7, 3, 1, але пропущено повторюваність."
+    },
+    {
+      "id": "calib_02",
+      "human_score": 1.0,
+      "judge_score": 1.0,
+      "diff": 0.0,
+      "agreed": true,
+      "judge_reasoning": "Відповідь системи повністю правильна, містить усі факти."
+    },
+    {
+      "id": "calib_03",
+      "human_score": 1.0,
+      "judge_score": 1.0,
+      "diff": 0.0,
+      "agreed": true,
+      "judge_reasoning": "Відповідь повністю правильна, містить обидва пороги 300 і 600 DPI."
+    },
+    {
+      "id": "calib_04",
+      "human_score": 0.6,
+      "judge_score": 0.4,
+      "diff": 0.2,
+      "agreed": false,
+      "judge_reasoning": "Пропущено вимогу 600 DPI для мікродруку."
+    },
+    {
+      "id": "calib_05",
+      "human_score": 1.0,
+      "judge_score": 1.0,
+      "diff": 0.0,
+      "agreed": true,
+      "judge_reasoning": "Зразкова детермінована відмова на запитання без відповіді."
+    },
+    {
+      "id": "calib_06",
+      "human_score": 0.0,
+      "judge_score": 0.0,
+      "diff": 0.0,
+      "agreed": true,
+      "judge_reasoning": "Груба галюцинація про ставку 20% замість відмови."
+    },
+    {
+      "id": "calib_07",
+      "human_score": 1.0,
+      "judge_score": 0.9,
+      "diff": 0.1,
+      "agreed": true,
+      "judge_reasoning": "Правильна по суті відповідь."
+    },
+    {
+      "id": "calib_08",
+      "human_score": 0.0,
+      "judge_score": 0.0,
+      "diff": 0.0,
+      "agreed": true,
+      "judge_reasoning": "Відповідь абсолютно неправильна: водійське посвідчення не підтверджує громадянство."
+    },
+    {
+      "id": "calib_09",
+      "human_score": 1.0,
+      "judge_score": 0.7,
+      "diff": 0.3,
+      "agreed": false,
+      "judge_reasoning": "Правильна по суті, але дрібне спрощення терміну."
+    },
+    {
+      "id": "calib_10",
+      "human_score": 0.5,
+      "judge_score": 0.3,
+      "diff": 0.2,
+      "agreed": false,
+      "judge_reasoning": "Суттєве відхилення порогу."
+    }
+  ]
+}

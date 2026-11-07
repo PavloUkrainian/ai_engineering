@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Biometric Engineering Standard: 1:1 Facial Verification Performance Metrics</title>
+    <meta name="doc-type" content="technical_guide">
+    <meta name="version-date" content="2022-08-30">
+</head>
+<body>
+    <header>
+        <h1>Biometric Engineering Standard: 1:1 Facial Verification Performance Metrics</h1>
+        <div class="metadata">
+            <span class="type">Type: technical_guide</span>
+            <span class="date">Date: 2022-08-30</span>
+        </div>
+    </header>
+    <main>
+        
+        <section>
+            <h2>1. False Match Rate (FMR) vs False Non-Match Rate (FNMR)</h2>
+            <p>For banking KYC compliance, the 1:1 facial matching algorithm must achieve a False Match Rate (FMR) <= 0.001% (1 in 100,000) at an operational False Non-Match Rate (FNMR) <= 1.0%. The similarity threshold corresponding to this operating point must be calibrated on demographic datasets representing the target population.</p>
+        </section>
+        <section>
+            <h2>2. Environmental Normalization</h2>
+            <p>Prior to vector embedding extraction (512-dimensional ArcFace/CosFace embeddings), the input face is aligned via 5-point affine transformation based on eye pupil and mouth corner coordinates, followed by histogram equalization to mitigate harsh lighting variations.</p>
+        </section>
+    </main>
+</body>
+</html>

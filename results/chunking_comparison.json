@@ -1,0 +1,22 @@
+{
+  "structure_aware": {
+    "total_chunks": 78,
+    "mean_tokens": 105.1,
+    "std_tokens": 56.2,
+    "min_tokens": 19,
+    "max_tokens": 326,
+    "mean_chars": 418.5,
+    "sentence_integrity_rate": 0.936,
+    "section_context_rate": 1.0
+  },
+  "fixed_size": {
+    "total_chunks": 74,
+    "mean_tokens": 95.5,
+    "std_tokens": 56.1,
+    "min_tokens": 10,
+    "max_tokens": 304,
+    "mean_chars": 385.4,
+    "sentence_integrity_rate": 0.486,
+    "section_context_rate": 0.0
+  }
+}

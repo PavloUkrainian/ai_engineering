@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Fraud Detection Guide: Ghost Portrait and Secondary Image Cross-Verification</title>
+    <meta name="doc-type" content="technical_guide">
+    <meta name="version-date" content="2023-08-11">
+</head>
+<body>
+    <header>
+        <h1>Fraud Detection Guide: Ghost Portrait and Secondary Image Cross-Verification</h1>
+        <div class="metadata">
+            <span class="type">Type: technical_guide</span>
+            <span class="date">Date: 2023-08-11</span>
+        </div>
+    </header>
+    <main>
+        
+        <section>
+            <h2>1. Secondary Ghost Portrait Characteristics</h2>
+            <p>Polycarbonate ID cards and passports incorporate a secondary, smaller 'ghost' portrait laser-engraved into a clear window or printed with UV-luminescent ink. The facial geometry and feature vectors of the primary portrait and the secondary ghost portrait must yield a cosine similarity >= 0.88.</p>
+        </section>
+        <section>
+            <h2>2. Tamper Indicators in Portrait Swapping</h2>
+            <p>Fraudulent document alteration commonly involves cutting out and replacing only the primary photo while leaving the ghost portrait intact. A cosine similarity divergence below 0.70 between primary and ghost portraits constitutes definitive evidence of physical document tampering.</p>
+        </section>
+    </main>
+</body>
+</html>

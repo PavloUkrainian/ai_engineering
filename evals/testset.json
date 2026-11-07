@@ -1,0 +1,251 @@
+[
+  {
+    "id": "q01_mrz_weights",
+    "question": "Які вагові коефіцієнти використовуються для розрахунку контрольної суми MRZ у стандарті ICAO 9303?",
+    "type": "factual",
+    "expected_answer": "У стандарті ICAO 9303 для розрахунку контрольної суми MRZ використовується повторювана послідовність вагових коефіцієнтів 7, 3, 1, 7, 3, 1... за алгоритмом Modulo 10.",
+    "expected_sources": [
+      "ICAO Doc 9303 Appendix: Check Digit Calculation Rules for MRZ Zones",
+      "1. Weighting Factors and Modulo 10 Algorithm"
+    ],
+    "key_facts": ["7", "3", "1", "10"],
+    "is_unanswerable": false
+  },
+  {
+    "id": "q02_td1_dimensions_mrz",
+    "question": "Яка кількість рядків та символів у машинозчитуваній зоні (MRZ) для ID-карток формату TD1?",
+    "type": "factual",
+    "expected_answer": "Машинозчитувана зона документа формату TD1 складається з трьох рядків по 30 символів у кожному (загалом 90 символів).",
+    "expected_sources": [
+      "ICAO Doc 9303 Part 3: Specifications for TD1 Size Machine Readable Official Travel Documents",
+      "3. Machine Readable Zone (MRZ) Structure for TD1"
+    ],
+    "key_facts": ["трьох рядків", "30", "90"],
+    "is_unanswerable": false
+  },
+  {
+    "id": "q03_td3_passport_mrz",
+    "question": "Яка структура MRZ закордонного паспорта формату TD3?",
+    "type": "factual",
+    "expected_answer": "MRZ паспорта формату TD3 складається з двох рядків по 44 символи кожен (разом 88 символів).",
+    "expected_sources": [
+      "ICAO Doc 9303 Part 4: Specifications for Machine Readable Passports (TD3 Size)",
+      "2. MRZ Structure for Passports (TD3 2x44)"
+    ],
+    "key_facts": ["двох рядків", "44", "88"],
+    "is_unanswerable": false
+  },
+  {
+    "id": "q04_rnocpp_checksum",
+    "question": "Як обчислюється десята контрольна цифра українського податкового номера РНОКПП (ІПН)?",
+    "type": "factual",
+    "expected_answer": "10-й контрольний розряд РНОКПП обчислюється як зважена сума перших 9 цифр з ваговими коефіцієнтами [-1, 5, 7, 9, 4, 6, 10, 5, 7] за модулем 11.",
+    "expected_sources": [
+      "Ukrainian Tax ID (RNOCPP): Algorithmic Structure and Checksum Verification",
+      "2. Checksum Mathematical Formula"
+    ],
+    "key_facts": ["11", "5, 7, 9", "10"],
+    "is_unanswerable": false
+  },
+  {
+    "id": "q05_video_kyc_nbu65",
+    "question": "Які вимоги встановлює Положення НБУ № 65 до проведення відеоверифікації клієнта?",
+    "expected_answer": "Відеоверифікація проводиться з обов'язковим динамічним контролем присутності (liveness detection), фіксацією геолокації та IP-адреси, візуальною перевіркою захисних елементів документа під нахилом та порогом схожості обличчя не менше 0.95.",
+    "type": "factual",
+    "expected_sources": [
+      "Положення НБУ № 65: Дистанційна ідентифікація та верифікація клієнтів банків",
+      "Розділ III. Правила проведення відеоверифікації"
+    ],
+    "key_facts": ["liveness", "геолокац", "0.95"],
+    "is_unanswerable": false
+  },
+  {
+    "id": "q06_laplacian_blur_threshold",
+    "question": "Який поріг дисперсії Лапласа використовується для відсіювання розмитих фотографій у DocAI?",
+    "expected_answer": "Для виявлення розмиття використовується оператор Лапласа: зображення з дисперсією відгуку (Laplacian variance) менше 100.0 вважаються розмитими та відхиляються.",
+    "type": "factual",
+    "expected_sources": [
+      "DocAI Quality Assessment: Algorithmic Blur, Glare, and Shadow Filtering",
+      "1. Blur Detection using Laplacian Variance"
+    ],
+    "key_facts": ["100", "Лаплас"],
+    "is_unanswerable": false
+  },
+  {
+    "id": "q07_ocr_dpi_standard",
+    "question": "Яка мінімальна роздільна здатність у DPI вимагається для звичайного OCR та мікродруку?",
+    "expected_answer": "Для якісного OCR необхідна роздільна здатність не менше 300 DPI, а для розпізнавання захисного мікродруку (розміром менше або рівно 0.25 мм) — не менше 600 DPI.",
+    "type": "factual",
+    "expected_sources": [
+      "DocAI Computer Vision Standard: Image Resolution and Pre-processing Benchmarks",
+      "1. Minimum DPI Thresholds for OCR Accuracy"
+    ],
+    "key_facts": ["300", "600", "DPI"],
+    "is_unanswerable": false
+  },
+  {
+    "id": "q08_poa_validity_days",
+    "question": "Протягом якого терміну діє документ, наданий як підтвердження адреси (Proof of Address)?",
+    "expected_answer": "Усі документи для підтвердження адреси проживання (рахунки за комунальні послуги, виписки з банку) мають бути видані не раніше ніж за 90 календарних днів до дати подання.",
+    "type": "factual",
+    "expected_sources": [
+      "FinTech KYC Policy: Proof of Address (POA) and Secondary Document Standards",
+      "2. Validity Period and Format Restrictions"
+    ],
+    "key_facts": ["90", "днів"],
+    "is_unanswerable": false
+  },
+  {
+    "id": "q09_fatf_pep_definition",
+    "question": "Хто належить до категорії іноземних публічних діячів (PEPs) згідно з FATF?",
+    "expected_answer": "Іноземні публічні діячі (Foreign PEPs) — це фізичні особи, яким державою довірено або було довірено визначні публічні функції (глави держав, міністри, високопосадовці, судді, військові офіцери), а також члени їхніх сімей та близькі соратники.",
+    "type": "factual",
+    "expected_sources": [
+      "FATF Recommendation 12: Politically Exposed Persons (PEPs) Lifecycle and Monitoring",
+      "1. Definition of Foreign and Domestic PEPs"
+    ],
+    "key_facts": ["публічн", "функці", "сімей"],
+    "is_unanswerable": false
+  },
+  {
+    "id": "q10_passport_1994_photos",
+    "question": "У якому віці обов'язково вклеювати фотографії в український паспорт-книжечку 1994 року?",
+    "expected_answer": "В український паспорт-книжечку зразка 1994 року нові фотографії власника вклеюються після досягнення 25 і 45 років на сторінки 3 і 5 відповідно протягом 30 календарних днів.",
+    "type": "factual",
+    "expected_sources": [
+      "Document Verification Standard: Ukrainian Internal Passport (1994 Model Booklet)",
+      "1. Structure and Photo Insertion Milestones"
+    ],
+    "key_facts": ["25", "45", "30"],
+    "is_unanswerable": false
+  },
+  {
+    "id": "q11_ghost_portrait_tampering",
+    "question": "Яке значення схожості між основним та ghost-портретом вказує на переклеювання фото в паспорті?",
+    "expected_answer": "Зниження косинусної схожості між основним та додатковим ghost-портретом нижче 0.70 свідчить про фізичну підробку та заміну фотографії.",
+    "type": "factual",
+    "expected_sources": [
+      "Fraud Detection Guide: Ghost Portrait and Secondary Image Cross-Verification",
+      "2. Tamper Indicators in Portrait Swapping"
+    ],
+    "key_facts": ["0.70", "підробк"],
+    "is_unanswerable": false
+  },
+  {
+    "id": "q12_bankid_freshness",
+    "question": "Протягом якого максимального терміну вважаються актуальними дані ідентифікації, отримані через BankID НБУ?",
+    "expected_answer": "Дані ідентифікації клієнта, отримані через систему BankID НБУ, вважаються актуальними протягом максимум 12 місяців від дати видачі.",
+    "type": "factual",
+    "expected_sources": [
+      "Integration Guide: BankID NBU OAuth2 Protocol and Scopes for FinTech",
+      "2. Data Freshness and Re-verification Requirements"
+    ],
+    "key_facts": ["12", "місяц"],
+    "is_unanswerable": false
+  },
+  {
+    "id": "q13_sanctions_fuzzy_threshold",
+    "question": "Який поріг нечіткого збігу (fuzzy matching similarity) встановлено для обов'язкового ручного розслідування санкцій?",
+    "expected_answer": "Збіг ПІБ клієнта із санкційними списками зі скором схожості 85% (0.85) або вище вимагає обов'язкової зупинки автоматичного онбордингу та ручного розслідування комплаєнс-офіцером.",
+    "type": "factual",
+    "expected_sources": [
+      "AML/CFT Compliance Manual: Automated Sanctions and PEP Screening Procedures",
+      "2. Fuzzy Matching Thresholds and False Positive Rules"
+    ],
+    "key_facts": ["0.85", "85%"],
+    "is_unanswerable": false
+  },
+  {
+    "id": "q14_unanswerable_mars_tax",
+    "question": "Яка ставка податку на додану вартість (ПДВ) діє для торговельних операцій на Марсі?",
+    "type": "unanswerable",
+    "expected_answer": "У наданих документах немає цієї інформації.",
+    "expected_sources": [],
+    "key_facts": ["немає цієї інформації"],
+    "is_unanswerable": true
+  },
+  {
+    "id": "q15_unanswerable_spaceship_license",
+    "question": "Який порядок продовження посвідчення водія міжзоряного космічного корабля?",
+    "type": "unanswerable",
+    "expected_answer": "У наданих документах немає цієї інформації.",
+    "expected_sources": [],
+    "key_facts": ["немає цієї інформації"],
+    "is_unanswerable": true
+  },
+  {
+    "id": "q16_unanswerable_crypto_mining_1994",
+    "question": "Як згідно з паспортом-книжечкою 1994 року верифікується дохід від майнінгу криптовалюти Bitcoin?",
+    "type": "unanswerable",
+    "expected_answer": "У наданих документах немає цієї інформації.",
+    "expected_sources": [],
+    "key_facts": ["немає цієї інформації"],
+    "is_unanswerable": true
+  },
+  {
+    "id": "q17_unanswerable_pizza_api",
+    "question": "Які ендпоінти API використовуються для доставки гарячої піци в системі BankID НБУ?",
+    "type": "unanswerable",
+    "expected_answer": "У наданих документах немає цієї інформації.",
+    "expected_sources": [],
+    "key_facts": ["немає цієї інформації"],
+    "is_unanswerable": true
+  },
+  {
+    "id": "q18_unanswerable_quantum_passports",
+    "question": "Які алгоритми постквантового шифрування використовуються в паспортах зразка 1917 року?",
+    "type": "unanswerable",
+    "expected_answer": "У наданих документах немає цієї інформації.",
+    "expected_sources": [],
+    "key_facts": ["немає цієї інформації"],
+    "is_unanswerable": true
+  },
+  {
+    "id": "q19_trap_deprecated_email_scans",
+    "question": "Чи дозволяється клієнтам зараз відправляти звичайні несертифіковані скан-копії паспорта електронною поштою згідно з правилами 2019 року?",
+    "type": "adversarial_trap",
+    "expected_answer": "Ні, правило 2019 року про прийом несертифікованих скан-копій електронною поштою є застарілим і було повністю скасовано Положенням НБУ № 65 у 2020 році. Дистанційна верифікація вимагає відеоідентифікації, Дія.Підпис або BankID.",
+    "expected_sources": [
+      "ARCHIVED: FinTech Operational KYC Rules v1.0 (2019 Edition - DEPRECATED)",
+      "1. Archived Rule: Unverified Email Scans (SUPERSEDED)"
+    ],
+    "key_facts": ["скасован", "НБУ", "не"],
+    "is_unanswerable": false
+  },
+  {
+    "id": "q20_trap_driver_license_citizenship",
+    "question": "Чи можна використовувати посвідчення водія як первинний документ для підтвердження громадянства України при повному банківському онбордингу?",
+    "type": "adversarial_trap",
+    "expected_answer": "Ні, посвідчення водія не підтверджує громадянство України та не приймається як первинний документ для повного банківського онбордингу. Воно може використовуватися лише як вторинний документ або для спрощеної ідентифікації з лімітом до 5 000 грн.",
+    "expected_sources": [
+      "Compliance Guideline: Ukrainian Driving License Limitations in FinTech Verification",
+      "1. Non-Citizenship Status of Driving Licenses"
+    ],
+    "key_facts": ["не", "громадянств", "вторинн"],
+    "is_unanswerable": false
+  },
+  {
+    "id": "q21_trap_notarized_copies_post",
+    "question": "Чи зобов'язані мешканці віддалених регіонів відправляти паперові нотаріальні копії поштою за регламентом 2018 року?",
+    "type": "adversarial_trap",
+    "expected_answer": "Ні, порядок 2018 року про відправку паперових нотаріальних копій поштою є застарілим історичним документом і був повністю замінений дистанційною верифікацією через Дію та BankID.",
+    "expected_sources": [
+      "ARCHIVED: Guidance Memo on Paper-Based Notarized Copies (DEPRECATED 2018)",
+      "1. Historic Notarized Paper Submission"
+    ],
+    "key_facts": ["застаріл", "Дія", "BankID"],
+    "is_unanswerable": false
+  },
+  {
+    "id": "q22_trap_mobile_bill_poa",
+    "question": "Чи приймається рахунок за мобільний телефон як належне підтвердження адреси проживання (Proof of Address)?",
+    "type": "adversarial_trap",
+    "expected_answer": "Ні, рахунки за мобільний телефон категорично заборонено приймати для підтвердження адреси (Proof of Address). Дозволені лише комунальні рахунки за електроенергію, газ, воду, фіксований інтернет або виписки з банку.",
+    "expected_sources": [
+      "FinTech KYC Policy: Proof of Address (POA) and Secondary Document Standards",
+      "1. Acceptable Proof of Address Documents"
+    ],
+    "key_facts": ["не", "заборон", "комунальн"],
+    "is_unanswerable": false
+  }
+]

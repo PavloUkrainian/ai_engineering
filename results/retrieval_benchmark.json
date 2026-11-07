@@ -1,0 +1,29 @@
+{
+  "dense": {
+    "mode": "dense",
+    "queries_count": 15,
+    "recall_at_1_percent": 100.0,
+    "recall_at_3_percent": 100.0,
+    "recall_at_5_percent": 100.0,
+    "mrr": 1.0,
+    "mean_latency_ms": 0.35
+  },
+  "hybrid": {
+    "mode": "hybrid",
+    "queries_count": 15,
+    "recall_at_1_percent": 80.0,
+    "recall_at_3_percent": 100.0,
+    "recall_at_5_percent": 100.0,
+    "mrr": 0.889,
+    "mean_latency_ms": 0.54
+  },
+  "hybrid_rerank": {
+    "mode": "hybrid_rerank",
+    "queries_count": 15,
+    "recall_at_1_percent": 60.0,
+    "recall_at_3_percent": 86.7,
+    "recall_at_5_percent": 100.0,
+    "mrr": 0.752,
+    "mean_latency_ms": 0.62
+  }
+}
