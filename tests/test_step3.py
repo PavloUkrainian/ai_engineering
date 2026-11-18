@@ -111,6 +111,21 @@ class TestStep3RAG(unittest.TestCase):
         self.assertTrue(resp.is_refusal)
         self.assertIn("немає цієї інформації", resp.answer.lower())
 
+    def test_stage1_retriever_threshold_saves_cost(self):
+        """Перевірка, що out-of-domain запити відсікаються на Stage 1 (Retriever) з $0 витрат."""
+        rag = RAGPipeline(
+            retriever=self.retriever,
+            llm_client=self.mock_client,
+            sampling=CONFIG_DETERMINISTIC,
+            token_budget=1500
+        )
+        # Запит з кешованим реальним ембеддінгом, косинусна схожість якого ~0.238 < 0.35
+        resp = rag.answer("Яка ставка податку на додану вартість (ПДВ) діє для торговельних операцій на Марсі?", prompt_version="v2")
+        self.assertTrue(resp.is_refusal)
+        self.assertEqual(resp.context_tokens, 0)
+        self.assertEqual(resp.total_tokens, 0)
+        self.assertEqual(resp.cost_usd, 0.0)
+
     def test_prompts_files_exist(self):
         """Перевірка наявності версіонованих файлів промптів."""
         v1_path = Path("prompts/rag_v1.txt")

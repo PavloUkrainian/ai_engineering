@@ -24,7 +24,7 @@ logger = logging.getLogger(__name__)
 
 PROMPTS_DIR = Path("prompts")
 DEFAULT_TOKEN_BUDGET = 2000
-DEFAULT_RELEVANCE_THRESHOLD = 0.015
+DEFAULT_RELEVANCE_THRESHOLD = 0.35
 
 REFUSAL_PHRASES = [
     "у наданих документах немає цієї інформації",
@@ -186,8 +186,17 @@ class RAGPipeline:
             filter_dict=filter_dict
         )
 
-        # 2. Пороговий контроль: якщо чанків немає або релевантність нульова — миттєва відмова
-        if not chunks or (chunks[0].score < self.relevance_threshold and search_mode == SearchMode.HYBRID_RERANK):
+        # 2. Пороговий контроль (Stage 1 Retriever Gate):
+        # Перевіряємо максимальну семантичну схожість (dense_score) серед знайдених чанків
+        max_dense = max((c.dense_score for c in chunks if c.dense_score is not None), default=None)
+        used_mock_emb = getattr(self.retriever.embedding_client, "last_query_was_mock", False)
+
+        below_threshold = (
+            max_dense is not None
+            and not used_mock_emb
+            and max_dense < self.relevance_threshold
+        )
+        if not chunks or below_threshold:
             latency_ms = (time.perf_counter() - start_time) * 1000.0
             return RAGResponse(
                 query=query,

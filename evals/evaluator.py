@@ -115,11 +115,15 @@ class Evaluator:
                 },
                 "judge_reasoning": judge_res.reasoning,
                 "latency_ms": round(lat_ms, 1),
-                "cost_usd": rag_resp.cost_usd
+                "cost_usd": rag_resp.cost_usd,
+                "stage1_refusal": bool(rag_resp.is_refusal and rag_resp.total_tokens == 0),
+                "is_mock": rag_resp.is_mock
             })
 
         # Агреговані метрики
         n = len(testset)
+        any_mock = any(r["is_mock"] for r in results_list)
+        stage1_refusals = sum(1 for r in results_list if r["stage1_refusal"])
         avg_cit = (sum(citation_scores) / n) * 100.0
         avg_facts = (sum(key_facts_scores) / n) * 100.0
         avg_refusal = (sum(refusal_scores) / n) * 100.0
@@ -144,6 +148,7 @@ class Evaluator:
 
         summary = {
             "total_questions": n,
+            "is_mock": any_mock,
             "passed_quality_gates": passed,
             "metrics": {
                 "citation_accuracy_percent": round(avg_cit, 1),
@@ -152,6 +157,7 @@ class Evaluator:
                 "faithfulness_percent": round(avg_faith, 1),
                 "judge_correctness_percent": round(avg_judge, 1),
                 "overall_score_percent": round(overall_score, 1),
+                "stage1_retriever_refusals": stage1_refusals,
                 "mean_latency_ms": round(sum(latencies_ms) / n, 1),
                 "total_cost_usd": round(total_cost, 5),
                 "cost_per_1000_queries_usd": round((total_cost / n) * 1000, 4)
@@ -165,9 +171,10 @@ class Evaluator:
             "items": results_list
         }
 
-        # Збереження результатів у results/eval_results.json
+        # Збереження результатів: mock-прогін не перезаписує бойовий benchmark
         RESULTS_DIR.mkdir(parents=True, exist_ok=True)
-        out_path = RESULTS_DIR / "eval_results.json"
+        out_name = "eval_results_mock.json" if any_mock else "eval_results.json"
+        out_path = RESULTS_DIR / out_name
         with open(out_path, "w", encoding="utf-8") as f:
             json.dump(summary, f, ensure_ascii=False, indent=2)
         logger.info(f"💾 Результати evals збережено у {out_path}")

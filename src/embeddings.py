@@ -32,9 +32,10 @@ class EmbeddingClient:
         self.cache_file = Path(cache_file)
         self.cache: Dict[str, List[float]] = self._load_cache()
         self.client: Optional[OpenAI] = None
+        self.last_query_was_mock: bool = False
 
         api_key = settings.openai_api_key or os.getenv("OPENAI_API_KEY")
-        if api_key and not api_key.startswith("your_") and not settings.use_mock_fallback:
+        if api_key and not api_key.startswith("your_") and api_key not in ("dummy", "dummy_key") and not settings.use_mock_fallback:
             try:
                 self.client = OpenAI(api_key=api_key)
             except Exception as e:
@@ -108,10 +109,12 @@ class EmbeddingClient:
 
         # 2. Якщо все знайдено в кеші — повертаємо
         if not missing_texts:
+            self.last_query_was_mock = False
             return results  # type: ignore
 
         # 3. Генерація через OpenAI API
         computed_embeddings: List[List[float]] = []
+        used_real_api = False
         if self.client is not None and not settings.use_mock_fallback:
             try:
                 # Батчі по 50 текстів
@@ -124,16 +127,21 @@ class EmbeddingClient:
                     )
                     for item in response.data:
                         computed_embeddings.append(item.embedding)
+                used_real_api = True
             except Exception as e:
                 logger.warning(f"Збій OpenAI Embeddings API ({e}). Перехід на офлайн-ембеддінги.")
                 computed_embeddings = [self._deterministic_mock_embedding(t) for t in missing_texts]
         else:
             computed_embeddings = [self._deterministic_mock_embedding(t) for t in missing_texts]
 
-        # 4. Запис у кеш і в фінальний результат
+        self.last_query_was_mock = not used_real_api
+
+        # 4. Запис у кеш (тільки реальні ембеддінги!) і в фінальний результат
         for idx, emb, text in zip(missing_indices, computed_embeddings, missing_texts):
             results[idx] = emb
-            self.cache[self._text_hash(text)] = emb
+            if used_real_api:
+                self.cache[self._text_hash(text)] = emb
 
-        self._save_cache()
+        if used_real_api:
+            self._save_cache()
         return results  # type: ignore

@@ -356,7 +356,7 @@ class MockFallbackClient(BaseLLMClient):
             try:
                 with open(calib_path, "r", encoding="utf-8") as f:
                     for item in json.load(f):
-                        k = (item["question"].strip().lower(), item["candidate_answer"].strip().lower()[:30])
+                        k = (item["question"].strip().lower(), item["candidate_answer"].strip().lower())
                         self._calib_cache[k] = item
             except Exception:
                 pass
@@ -413,16 +413,12 @@ class MockFallbackClient(BaseLLMClient):
         if response_format and response_format.get("type") == "json_object":
             if "суддя" in system_prompt.lower() or "ground truth" in user_prompt.lower():
                 q_match = re.search(r'ЗАПИТАННЯ:\s*([^\n]+)', user_prompt)
-                cand_match = re.search(r'ВІДПОВІДЬ_СИСТЕМИ:\s*([^\n]+)', user_prompt)
+                cand_match = re.search(r'ВІДПОВІДЬ_СИСТЕМИ:\s*(.+?)\n\nОціни відповідь', user_prompt, re.DOTALL)
                 q = q_match.group(1).strip().lower() if q_match else ""
                 cand = cand_match.group(1).strip().lower() if cand_match else ""
 
-                # Пошук у калібрувальній вибірці
-                calib_hit = None
-                for (cq, ccand), item in self._calib_cache.items():
-                    if (cq in q or q in cq) and (ccand in cand or cand in ccand):
-                        calib_hit = item
-                        break
+                # Пошук точного збігу у калібрувальній вибірці
+                calib_hit = self._calib_cache.get((q, cand))
 
                 if calib_hit:
                     c_id = calib_hit.get("id", "")

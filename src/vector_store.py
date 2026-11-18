@@ -39,6 +39,7 @@ class SearchResult:
     score: float
     rank: int = 1
     source: str = "dense"
+    dense_score: Optional[float] = None
 
     def to_dict(self) -> dict:
         return asdict(self)
@@ -132,7 +133,8 @@ class QdrantVectorStore:
                 text=pl.get("text", ""),
                 score=float(p.score) if p.score is not None else 0.0,
                 rank=rank,
-                source="dense"
+                source="dense",
+                dense_score=float(p.score) if p.score is not None else 0.0
             ))
 
         return results

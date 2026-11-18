@@ -122,7 +122,13 @@ class FaithfulnessScorer:
         meaningful_numbers = {n for n in numbers if len(n) > 1 or n in ["7", "3", "1", "2"]}
 
         if meaningful_numbers and context_text:
-            grounded_numbers = sum(1 for n in meaningful_numbers if n in context_text)
+            grounded_numbers = 0
+            for n in meaningful_numbers:
+                variants = [n]
+                if n.endswith(".0"):
+                    variants.append(n[:-2])
+                if any(re.search(rf'(?<!\d){re.escape(v)}(?!\d)', context_text) for v in variants):
+                    grounded_numbers += 1
             numerical_grounding = grounded_numbers / len(meaningful_numbers)
         else:
             numerical_grounding = 1.0

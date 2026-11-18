@@ -22,7 +22,7 @@ from src.bm25_search import BM25SearchEngine
 from src.retriever import HybridRetriever
 from src.rag_pipeline import RAGPipeline
 from src.client import ProviderClient
-from src.config import CONFIG_DETERMINISTIC
+from src.config import CONFIG_DETERMINISTIC, settings
 from evals.evaluator import Evaluator
 from evals.judge import LLMJudge
 
@@ -59,8 +59,10 @@ def run_evals(ci_mode: bool = False):
     print("⚖️ 1. КАЛІБРУВАННЯ LLM-AS-A-JUDGE (НА РУЧНІЙ РОЗМІТЦІ)")
     print("=" * 90)
     calib_results = judge.run_calibration()
-    
-    calib_out_path = RESULTS_DIR / "judge_calibration.json"
+
+    is_mock_mode = settings.use_mock_fallback or not llm_client.api_key or llm_client.api_key in ("your_api_key_here", "dummy", "dummy_key", "")
+    calib_out_name = "judge_calibration_mock.json" if is_mock_mode else "judge_calibration.json"
+    calib_out_path = RESULTS_DIR / calib_out_name
     with open(calib_out_path, "w", encoding="utf-8") as f:
         json.dump(calib_results, f, ensure_ascii=False, indent=2)
 

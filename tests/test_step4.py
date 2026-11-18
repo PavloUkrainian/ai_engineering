@@ -118,6 +118,16 @@ class TestStep4Evals(unittest.TestCase):
         resp_empty = RAGResponse(query="test", answer="")
         self.assertEqual(FaithfulnessScorer.score(resp_empty, context), 0.0)
 
+        # 4. Перевірка, що число "7" не збігається з "2017" у контексті (захист від false positive)
+        ctx_2017 = "Документ ICAO Doc 9303 прийнято у 2017 році."
+        resp_hallucinated_num = RAGResponse(
+            query="test",
+            answer="Ваговий коефіцієнт становить 7 [ICAO Doc 9303, Section 1].",
+            citations=[Citation(doc_title="ICAO Doc 9303", section_title="Section 1")]
+        )
+        score_hallucinated = FaithfulnessScorer.score(resp_hallucinated_num, ctx_2017)
+        self.assertLess(score_hallucinated, 1.0, "Число 7 не повинно зараховуватись як заземлене через '2017'")
+
     def test_judge_calibration_file_and_metrics(self):
         """Перевірка вибірки для калібрування LLM-as-a-Judge (>= 10 зразків)."""
         calib_path = Path("evals/calibration_sample.json")
